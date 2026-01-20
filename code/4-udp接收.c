@@ -57,7 +57,7 @@ int main(void)
     ssize_t recvfrom(int sockfd, void *buf, size_t len, int flags, struct sockaddr *src_addr, socklen_t *addrlen);
     返回值：成功 -> 接受数据大小 失败 -> -1
     
-    参数：int sockfd 套接字
+    参数  int sockfd 套接字
           void *buf 储存数据的首地址
           size_t len 储存数据的空间大小
           int flag 标志位，一般为0
