@@ -13,7 +13,7 @@ void draw_board(cJSON *j_board) {
     if (!j_board) return;
     system("clear"); // 开发板上如果不支持 clear，可以换成 printf("\033[H\033[J");
     printf("==== 联网五子棋 Demo ====\n");
-    printf("   0 1 2 3 4 5 6 7 8 9\n");
+    printf("  0 1 2 3 4 5 6 7 8 9\n");
     int size = cJSON_GetArraySize(j_board);
     for (int i = 0; i < size; i++) {
         printf("%d ", i);
