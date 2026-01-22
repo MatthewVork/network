@@ -41,7 +41,7 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-    // 3. 监听 (Listen): 开始等待客户端连接，最大排队队列为 5
+    // 3. 监听 (Listen): 开始等待客户端连接，最大排队队列为 5，输出6个 = ERR
     if(listen(listen_fd, 5) < 0)
     {
         perror("Listen failed"); 
