@@ -1,2 +1,0 @@
-/usr/bin/ar qc liblogin_ui.a  CMakeFiles/login_ui.dir/login.c.o
-/usr/bin/ranlib liblogin_ui.a
