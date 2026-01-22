@@ -50,19 +50,21 @@ int main() {
 
     printf("象棋服务器已启动，正在监听端口: %d...\n", PORT);
 
-    // 初始化客户端数组，全部设为 -1 (代表空位)
+    // 初始化客户端数组，全部设为 -1 (代表空位) 按字节填入，不能使用memset
     for (int i = 0; i < MAX_CLIENTS; i++) client_fds[i] = -1;
 
     // --- 服务器核心主循环 ---
-    fd_set read_fds; // 定义一个“监听集合”，select 会监控集合里的所有 FD
+    fd_set read_fds; // 定义一个“监听集合”，select 会监控集合里的所有 FD， 默认大小 1024
     while (1) {
         FD_ZERO(&read_fds);       // 每次循环前清空集合
         FD_SET(listen_fd, &read_fds); // 把监听 Socket 加入集合，看有没有新人在敲门
         int max_fd = listen_fd;
 
         // 将所有已经连接上的玩家 FD 也加入监听集合，看他们有没有发消息（走棋、聊天）
-        for (int i = 0; i < MAX_CLIENTS; i++) {
-            if (client_fds[i] > 0) {
+        for (int i = 0; i < MAX_CLIENTS; i++) 
+        {
+            if (client_fds[i] > 0) 
+            {
                 FD_SET(client_fds[i], &read_fds);
                 if (client_fds[i] > max_fd) max_fd = client_fds[i]; // 记录最大的 FD 供 select 使用
             }
