@@ -1,16 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <arpa/inet.h>  // 提供网络地址转换和 Socket 定义
-#include <sys/select.h> // 提供 select 多路复用函数
-#include "cJSON.h"
+#include "server.h"
 
 #define PORT 8888       // 服务器监听端口
 #define MAX_CLIENTS 50  // 最大同时在线人数
 
-// 记录所有连接上来的客户端的文件描述符 (FD)
 int client_fds[MAX_CLIENTS]; 
+Player players[MAX_CLIENTS];  
+ChessRoom rooms[MAX_ROOMS];
 
 int main() {
     int listen_fd; // 服务器监听用的 Socket
@@ -28,20 +23,17 @@ int main() {
     //因为TCP协议为了保证数据的完整传输，底层在释放端口之前会进入一段等待时间，若重启可能导致时间等待
     //opt：代表开启这个功能，通过这个地址找这个值，然后读取的内存大小由Sizeof决定 
 
-    // 配置服务器信息
     memset(&serv_addr, 0, sizeof(serv_addr));
     serv_addr.sin_family = AF_INET;
-    serv_addr.sin_addr.s_addr = htonl(INADDR_ANY); // 监听所有网卡 IP
-    serv_addr.sin_port = htons(PORT);             // 转换为网络字节序
+    serv_addr.sin_addr.s_addr = htonl(INADDR_ANY); 
+    serv_addr.sin_port = htons(PORT);             
 
-    // 2. 绑定 (Bind): 把 Socket 和端口号 8888 绑定在一起
     if(bind(listen_fd, (struct sockaddr*)&serv_addr, sizeof(serv_addr)) < 0)
     {
         perror("Bind failed"); 
         exit(EXIT_FAILURE);
     }
 
-    // 3. 监听 (Listen): 开始等待客户端连接，最大排队队列为 5，输出6个 = ERR
     if(listen(listen_fd, 5) < 0)
     {
         perror("Listen failed"); 
@@ -50,67 +42,198 @@ int main() {
 
     printf("象棋服务器已启动，正在监听端口: %d...\n", PORT);
 
-    // 初始化客户端数组，全部设为 -1 (代表空位) 按字节填入，不能使用memset
-    for (int i = 0; i < MAX_CLIENTS; i++) client_fds[i] = -1;
+    // 初始化玩家和房间
+    for (int i = 0; i < MAX_CLIENTS; i++) {
+        client_fds[i] = -1;
+        players[i].fd = -1;
+        players[i].is_authenticated = 0;
+        players[i].room_id = -1;
+    }
+    for (int i = 0; i < MAX_ROOMS; i++) {
+        rooms[i].room_id = i;
+        rooms[i].red_fd = rooms[i].black_fd = -1;
+        rooms[i].red_ready = rooms[i].black_ready = 0;
+        rooms[i].is_full = -1;
+    }
 
-    // --- 服务器核心主循环 ---
-    fd_set read_fds; // 定义一个“监听集合”，select 会监控集合里的所有 FD， 默认大小 1024
+    fd_set read_fds; 
     while (1) {
-        FD_ZERO(&read_fds);       // 每次循环前清空集合
-        FD_SET(listen_fd, &read_fds); // 把监听 Socket 加入集合，看有没有新人在敲门
+        FD_ZERO(&read_fds);       
+        FD_SET(listen_fd, &read_fds); 
         int max_fd = listen_fd;
 
-        // 将所有已经连接上的玩家 FD 也加入监听集合，看他们有没有发消息（走棋、聊天）
-        for (int i = 0; i < MAX_CLIENTS; i++) 
-        {
-            if (client_fds[i] > 0) 
-            {
+        for (int i = 0; i < MAX_CLIENTS; i++) {
+            if (client_fds[i] > 0) {
                 FD_SET(client_fds[i], &read_fds);
-                if (client_fds[i] > max_fd) max_fd = client_fds[i]; // 记录最大的 FD 供 select 使用
+                if (client_fds[i] > max_fd) max_fd = client_fds[i]; 
             }
         }
 
-        // 4. select 多路复用：这是最关键的一步
-        // 它会在这里阻塞，直到有任何一个 FD 有动态（有人连接 或 有人发数据）才会返回
         if (select(max_fd + 1, &read_fds, NULL, NULL, NULL) < 0) continue;
 
-        // 【事件 A】：新玩家连接请求
         if (FD_ISSET(listen_fd, &read_fds)) {
-            int new_fd = accept(listen_fd, NULL, NULL); // 接受连接
-            // 在数组里找一个空位 (-1) 存入新玩家的 FD
+            int new_fd = accept(listen_fd, NULL, NULL); 
             for (int i = 0; i < MAX_CLIENTS; i++) {
                 if (client_fds[i] == -1) {
                     client_fds[i] = new_fd;
+                    players[i].fd = new_fd;
                     printf("【系统】新玩家已连接: FD %d\n", new_fd);
                     break;
                 }
             }
         }
 
-        // 【事件 B】：已连接的玩家发来了数据
         for (int i = 0; i < MAX_CLIENTS; i++) {
             int fd = client_fds[i];
             if (fd > 0 && FD_ISSET(fd, &read_fds)) {
-                char buf[2048] = {0}; // 接收缓冲区
-                int len = recv(fd, buf, sizeof(buf), 0); // 尝试接收数据
+                char buf[2048] = {0}; 
+                int len = recv(fd, buf, sizeof(buf), 0); 
 
                 if (len <= 0) { 
-                    // 如果接收长度 <= 0，代表玩家断开了连接
-                    printf("【系统】玩家退出: FD %d\n", fd);
-                    close(fd);         // 关闭这个 Socket
-                    client_fds[i] = -1; // 数组位置腾出来给别人
+                    handle_disconnect(fd); 
+                    close(fd);         
+                    client_fds[i] = -1; 
+                    players[i].is_authenticated = 0;
+                    players[i].room_id = -1;
                 } else {
-                    // 接收到了真正的数据，准备进行业务逻辑处理
-                    printf("【收到数据】来自 FD %d: %s\n", fd, buf);
-                    
-                    /* 这里就是之后的逻辑入口：
-                       1. cJSON_Parse(buf) 解析出命令类型。
-                       2. 如果是 REGISTER，就调注册函数。
-                       3. 如果是 MOVE，就转发给对手。
-                    */
+                    cJSON *root = cJSON_Parse(buf);
+                    if (!root) continue;
+                    cJSON *type_item = cJSON_GetObjectItem(root, "type");
+                    if (type_item) {
+                        int type = type_item->valueint;
+                        switch (type) {
+                            case 1: handle_register(fd, root); break; // 注册
+                            case 2: handle_login(fd, root, &players[i]); break; // 登录
+                            case 3: handle_get_rooms(fd); break; // 大厅列表
+                            case 4: handle_join_room(fd, root, &players[i]); break; // 进房
+                            case 5: handle_ready(fd, &players[i]); break; // 准备
+                            case 6: handle_move(fd, root, &players[i]); break; // 转发棋子
+                        }
+                    }
+                    cJSON_Delete(root);
                 }
             }
         }
     }
     return 0;
+}
+
+// --- 以下是所有函数的完整实现，绝对没有删减 ---
+
+void handle_register(int fd, cJSON *root) {
+    char *user = cJSON_GetObjectItem(root, "user")->valuestring;
+    char *pass = cJSON_GetObjectItem(root, "pass")->valuestring;
+    FILE *fp = fopen("users.txt", "r");
+    if (fp) {
+        char fu[32], fpw[32];
+        while (fscanf(fp, "%s %s", fu, fpw) != EOF) {
+            if (strcmp(user, fu) == 0) { 
+                fclose(fp); 
+                send_json_response(fd, "error", "用户已存在"); 
+                return; 
+            }
+        }
+        fclose(fp);
+    }
+    fp = fopen("users.txt", "a");
+    if (fp) { 
+        fprintf(fp, "%s %s\n", user, pass); 
+        fclose(fp); 
+        send_json_response(fd, "success", "注册成功"); 
+    }
+}
+
+void handle_login(int fd, cJSON *root, Player *p) {
+    char *user = cJSON_GetObjectItem(root, "user")->valuestring;
+    char *pass = cJSON_GetObjectItem(root, "pass")->valuestring;
+    FILE *fp = fopen("users.txt", "r");
+    if (!fp) {
+        send_json_response(fd, "error", "数据库文件不存在");
+        return;
+    }
+    char fu[32], fpw[32]; int found = 0;
+    while (fscanf(fp, "%s %s", fu, fpw) != EOF) {
+        if (strcmp(user, fu) == 0 && strcmp(pass, fpw) == 0) { 
+            found = 1; break; 
+        }
+    }
+    fclose(fp);
+    if (found) { 
+        p->is_authenticated = 1; 
+        strncpy(p->username, user, 31); 
+        send_json_response(fd, "success", "登录成功"); 
+    } else {
+        send_json_response(fd, "error", "账号或密码错误");
+    }
+}
+
+void handle_get_rooms(int fd) {
+    cJSON *rep = cJSON_CreateObject();
+    cJSON_AddStringToObject(rep, "status", "room_list");
+    cJSON *arr = cJSON_CreateArray();
+    for (int i = 0; i < MAX_ROOMS; i++) {
+        cJSON *r = cJSON_CreateObject();
+        cJSON_AddNumberToObject(r, "id", rooms[i].room_id);
+        cJSON_AddNumberToObject(r, "state", rooms[i].is_full);
+        cJSON_AddItemToArray(arr, r);
+    }
+    cJSON_AddItemToObject(rep, "data", arr);
+    char *out = cJSON_PrintUnformatted(rep);
+    send(fd, out, strlen(out), 0);
+    free(out); cJSON_Delete(rep);
+}
+
+void handle_join_room(int fd, cJSON *root, Player *p) {
+    int r_id = cJSON_GetObjectItem(root, "room_id")->valueint;
+    if(r_id < 0 || r_id >= MAX_ROOMS) return;
+    ChessRoom *r = &rooms[r_id];
+    if (r->is_full == 1) { send_json_response(fd, "error", "房间已满"); return; }
+    if (r->red_fd == -1) { r->red_fd = fd; p->side = 0; r->is_full = 0; }
+    else { r->black_fd = fd; p->side = 1; r->is_full = 1; }
+    p->room_id = r_id;
+    send_json_response(fd, "success", "入座成功");
+}
+
+void handle_ready(int fd, Player *p) {
+    if (p->room_id == -1) return;
+    ChessRoom *r = &rooms[p->room_id];
+    if (fd == r->red_fd) r->red_ready = 1;
+    else r->black_ready = 1;
+    if (r->red_ready && r->black_ready) {
+        send_json_response(r->red_fd, "start", "game_begin");
+        send_json_response(r->black_fd, "start", "game_begin");
+    }
+}
+
+void handle_move(int fd, cJSON *root, Player *p) {
+    if (p->room_id == -1) return;
+    ChessRoom *r = &rooms[p->room_id];
+    int target = (fd == r->red_fd) ? r->black_fd : r->red_fd;
+    if (target != -1) {
+        char *out = cJSON_PrintUnformatted(root);
+        send(target, out, strlen(out), 0);
+        free(out);
+    }
+}
+
+void handle_disconnect(int fd) {
+    for (int i = 0; i < MAX_ROOMS; i++) {
+        if (rooms[i].red_fd == fd) { 
+            rooms[i].red_fd = -1; rooms[i].red_ready = 0; 
+            rooms[i].is_full = (rooms[i].black_fd == -1) ? -1 : 0; 
+        }
+        if (rooms[i].black_fd == fd) { 
+            rooms[i].black_fd = -1; rooms[i].black_ready = 0; 
+            rooms[i].is_full = (rooms[i].red_fd == -1) ? -1 : 0; 
+        }
+    }
+}
+
+void send_json_response(int fd, const char* status, const char* msg) {
+    cJSON *reply = cJSON_CreateObject();
+    cJSON_AddStringToObject(reply, "status", status);
+    cJSON_AddStringToObject(reply, "msg", msg);
+    char *out = cJSON_PrintUnformatted(reply);
+    send(fd, out, strlen(out), 0);
+    free(out); cJSON_Delete(reply);
 }
