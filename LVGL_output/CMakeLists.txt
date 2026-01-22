@@ -1,0 +1,10 @@
+SET(SOURCES screens/ui_Screen_login.c
+    screens/ui_Screen_register.c
+    screens/ui_Screen_main_menu.c
+    ui.c
+    components/ui_comp_hook.c
+    ui_helpers.c
+    ui_events.c
+    fonts/ui_font_Black.c)
+
+add_library(ui ${SOURCES})
