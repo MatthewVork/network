@@ -1659,7 +1659,7 @@
                   {
                     "disabled": false,
                     "nid": 1179192281,
-                    "strtype": "BUTTON/EventHandler",
+                    "strtype": "_event/EventHandler",
                     "strval": "CLICKED",
                     "childs": [
                       {
@@ -6888,7 +6888,7 @@
                   {
                     "disabled": false,
                     "nid": 763146024,
-                    "strtype": "BUTTON/EventHandler",
+                    "strtype": "_event/EventHandler",
                     "strval": "CLICKED",
                     "childs": [
                       {
@@ -8127,7 +8127,7 @@
                   {
                     "disabled": false,
                     "nid": -701999681,
-                    "strtype": "BUTTON/EventHandler",
+                    "strtype": "_event/EventHandler",
                     "strval": "CLICKED",
                     "childs": [
                       {
@@ -9868,7 +9868,7 @@
               {
                 "disabled": false,
                 "nid": 668039276,
-                "strtype": "BUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -11638,7 +11638,7 @@
     "theme_color2": 0,
     "uiExportFolderPath": "",
     "projectExportFolderPath": "",
-    "backup_cnt": 36,
+    "backup_cnt": 41,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",
