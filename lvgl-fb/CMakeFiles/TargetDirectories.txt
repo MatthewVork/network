@@ -1,0 +1,6 @@
+/mnt/hgfs/code-3/lvgl-fb/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/code-3/lvgl-fb/CMakeFiles/edit_cache.dir
+/mnt/hgfs/code-3/lvgl-fb/CMakeFiles/lvgl_sdl.dir
+/mnt/hgfs/code-3/lvgl-fb/squi/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/code-3/lvgl-fb/squi/CMakeFiles/edit_cache.dir
+/mnt/hgfs/code-3/lvgl-fb/squi/CMakeFiles/ui.dir

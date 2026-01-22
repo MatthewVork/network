@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/lvgl_sdl.dir/main.c.o  -o lvgl_sdl   -L/mnt/hgfs/code-3/lvgl-fb/./lib  -Wl,-rpath,/mnt/hgfs/code-3/lvgl-fb/./lib squi/libui.a -llvgl -llvgl_examples -llvgl_demos -llv_drivers -lSDL2 

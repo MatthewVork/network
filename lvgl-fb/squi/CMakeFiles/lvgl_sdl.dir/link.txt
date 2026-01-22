@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/lvgl_sdl.dir/main.c.o  -o lvgl_sdl   -L/mnt/hgfs/code-3/lvgl-fb/./lib  -Wl,-rpath,/mnt/hgfs/code-3/lvgl-fb/./lib lib/liblvgl.a lvgl/liblvgl_examples.a lvgl/liblvgl_demos.a lib/liblv_drivers.a -lSDL2 lib/liblvgl.a 
