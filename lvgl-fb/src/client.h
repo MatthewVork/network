@@ -10,6 +10,23 @@
 #include <time.h>
 #include "cJSON.h"
 
+// --- 定义全局结构体 ---
+typedef struct {
+    volatile int has_update; // 信号量
+    int msg_type;           // 消息类型
+    char status[16];        // success/error
+    char msg_text[128];     // 提示文字
+    char username[32];
+    int room_id;
+    char role[16];          
+    int is_my_turn;         
+} PlayerGlobalData;
+
+// --- 声明外部变量 (关键！) ---
+// 这里只是告诉编译器：变量在别处，请放行
+extern int client_fd; 
+extern volatile PlayerGlobalData g_player; 
+
 void init_network();
 
 #endif

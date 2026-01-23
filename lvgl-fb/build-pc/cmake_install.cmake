@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb
+# Install script for directory: /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/build-pc/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/build-pc/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
