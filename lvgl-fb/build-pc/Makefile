@@ -5025,6 +5025,54 @@ squi/ui_helpers.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/ui_helpers.c.s
 .PHONY : squi/ui_helpers.c.s
 
+src/cJSON.o: src/cJSON.c.o
+.PHONY : src/cJSON.o
+
+# target to build an object file
+src/cJSON.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/src/cJSON.c.o
+.PHONY : src/cJSON.c.o
+
+src/cJSON.i: src/cJSON.c.i
+.PHONY : src/cJSON.i
+
+# target to preprocess a source file
+src/cJSON.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/src/cJSON.c.i
+.PHONY : src/cJSON.c.i
+
+src/cJSON.s: src/cJSON.c.s
+.PHONY : src/cJSON.s
+
+# target to generate assembly for a file
+src/cJSON.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/src/cJSON.c.s
+.PHONY : src/cJSON.c.s
+
+src/client.o: src/client.c.o
+.PHONY : src/client.o
+
+# target to build an object file
+src/client.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/src/client.c.o
+.PHONY : src/client.c.o
+
+src/client.i: src/client.c.i
+.PHONY : src/client.i
+
+# target to preprocess a source file
+src/client.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/src/client.c.i
+.PHONY : src/client.c.i
+
+src/client.s: src/client.c.s
+.PHONY : src/client.s
+
+# target to generate assembly for a file
+src/client.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/src/client.c.s
+.PHONY : src/client.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -5646,6 +5694,12 @@ help:
 	@echo "... squi/ui_helpers.o"
 	@echo "... squi/ui_helpers.i"
 	@echo "... squi/ui_helpers.s"
+	@echo "... src/cJSON.o"
+	@echo "... src/cJSON.i"
+	@echo "... src/cJSON.s"
+	@echo "... src/client.o"
+	@echo "... src/client.i"
+	@echo "... src/client.s"
 .PHONY : help
 
 

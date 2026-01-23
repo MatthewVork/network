@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include "lv_drivers/sdl/sdl.h"
 #include "ui.h"                 // 确保 squi 目录在 CMake 包含路径中
+#include "../src/client.h"
 
 // LVGL 心跳线程：每 5ms 告知 LVGL 时间流逝
 static int tick_thread(void *data) {
@@ -45,6 +46,9 @@ int main(int argc, char **argv) {
     // 6. 创建心跳线程
     SDL_CreateThread(tick_thread, "tick", NULL);
 
+    //-----初始化UI前测试服务器连接-----
+    init_network();
+    
     // 7. 初始化 UI
     ui_init();
 

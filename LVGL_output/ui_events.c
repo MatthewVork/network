@@ -4,10 +4,16 @@
 // Project name: SquareLine_Project
 
 #include "ui.h"
+#include "server.h"
 
 void User_login(lv_event_t * e)
 {
-	// Your code here
+	// 1. 获取 UI 输入框中的文本内容
+    const char * username = lv_textarea_get_text(ui_Username_login); 
+    const char * password = lv_textarea_get_text(ui_Password_login);
+
+	// 2. 检查网络连接
+    if(client_fd < 0) { printf("错误：未连接到服务器\n"); return; }
 }
 
 void User_register(lv_event_t * e)

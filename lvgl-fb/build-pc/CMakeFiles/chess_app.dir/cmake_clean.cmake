@@ -407,6 +407,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/chess_app.dir/squi/ui_events.c.o.d"
   "CMakeFiles/chess_app.dir/squi/ui_helpers.c.o"
   "CMakeFiles/chess_app.dir/squi/ui_helpers.c.o.d"
+  "CMakeFiles/chess_app.dir/src/cJSON.c.o"
+  "CMakeFiles/chess_app.dir/src/cJSON.c.o.d"
+  "CMakeFiles/chess_app.dir/src/client.c.o"
+  "CMakeFiles/chess_app.dir/src/client.c.o.d"
   "chess_app"
   "chess_app.pdb"
 )

@@ -212,6 +212,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/squi/ui.c" "CMakeFiles/chess_app.dir/squi/ui.c.o" "gcc" "CMakeFiles/chess_app.dir/squi/ui.c.o.d"
   "/mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/squi/ui_events.c" "CMakeFiles/chess_app.dir/squi/ui_events.c.o" "gcc" "CMakeFiles/chess_app.dir/squi/ui_events.c.o.d"
   "/mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/squi/ui_helpers.c" "CMakeFiles/chess_app.dir/squi/ui_helpers.c.o" "gcc" "CMakeFiles/chess_app.dir/squi/ui_helpers.c.o.d"
+  "/mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/src/cJSON.c" "CMakeFiles/chess_app.dir/src/cJSON.c.o" "gcc" "CMakeFiles/chess_app.dir/src/cJSON.c.o.d"
+  "/mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/src/client.c" "CMakeFiles/chess_app.dir/src/client.c.o" "gcc" "CMakeFiles/chess_app.dir/src/client.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

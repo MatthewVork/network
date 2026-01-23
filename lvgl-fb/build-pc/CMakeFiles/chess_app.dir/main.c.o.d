@@ -430,4 +430,27 @@ CMakeFiles/chess_app.dir/main.c.o: \
  /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/lvgl/lvgl.h \
  /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/squi/ui_helpers.h \
  /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/squi/ui.h \
- /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/squi/ui_events.h
+ /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/squi/ui_events.h \
+ /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/../src/client.h \
+ /usr/include/arpa/inet.h /usr/include/netinet/in.h \
+ /usr/include/x86_64-linux-gnu/sys/socket.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
+ /usr/include/x86_64-linux-gnu/bits/socket.h \
+ /usr/include/x86_64-linux-gnu/bits/socket_type.h \
+ /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
+ /usr/include/x86_64-linux-gnu/asm/socket.h \
+ /usr/include/asm-generic/socket.h /usr/include/linux/posix_types.h \
+ /usr/include/linux/stddef.h \
+ /usr/include/x86_64-linux-gnu/asm/posix_types.h \
+ /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
+ /usr/include/asm-generic/posix_types.h \
+ /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
+ /usr/include/asm-generic/bitsperlong.h \
+ /usr/include/x86_64-linux-gnu/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
+ /usr/include/x86_64-linux-gnu/bits/in.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+ /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/../src/cJSON.h
