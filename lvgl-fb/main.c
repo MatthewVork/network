@@ -50,10 +50,10 @@ int main(int argc, char **argv) {
     lv_init();
     sdl_init();
 
-    // ... (显示驱动注册代码省略，保持你原样即可) ...
     static lv_color_t buf[800 * 480];
     static lv_disp_draw_buf_t draw_buf;
     lv_disp_draw_buf_init(&draw_buf, buf, NULL, 800 * 480);
+
     static lv_disp_drv_t disp_drv;
     lv_disp_drv_init(&disp_drv);
     disp_drv.draw_buf = &draw_buf;
@@ -61,6 +61,7 @@ int main(int argc, char **argv) {
     disp_drv.hor_res = 800;
     disp_drv.ver_res = 480;
     lv_disp_drv_register(&disp_drv);
+
     static lv_indev_drv_t indev_drv;
     lv_indev_drv_init(&indev_drv);
     indev_drv.type = LV_INDEV_TYPE_POINTER;
@@ -71,27 +72,36 @@ int main(int argc, char **argv) {
 
     init_network();
     
-    // 创建 pthread 线程
     pthread_t tid;
     pthread_create(&tid, NULL, network_recv_thread, NULL);
 
     ui_init();
 
     while (1) {
-        // 【核心选择逻辑】
         if (g_player.has_update) {
-            // 根据 msg_type 处理反馈
-            if (g_player.msg_type == 1 || g_player.msg_type == 2) {
+            // 根据 msg_type 区分处理：1 是注册反馈，2 是登录反馈 
+            if (g_player.msg_type == 1) { 
+                // 处理注册结果 
                 if (strcmp((char*)g_player.status, "success") == 0) {
                     lv_obj_clear_flag(ui_Container_register_success, LV_OBJ_FLAG_HIDDEN);
-                    // 如果有对应的 Label，可以显示提示词：lv_label_set_text(ui_Label_xxx, g_player.msg_text);
                     lv_timer_create(hide_ui_timer_cb, 3000, ui_Container_register_success);
                 } else {
                     lv_obj_clear_flag(ui_Container_register_fail, LV_OBJ_FLAG_HIDDEN);
                     lv_timer_create(hide_ui_timer_cb, 3000, ui_Container_register_fail);
                 }
+            } 
+            else if (g_player.msg_type == 2) {
+                // 处理登录结果 
+                if (strcmp((char*)g_player.status, "success") == 0) {
+                    lv_obj_clear_flag(ui_Container_login_success, LV_OBJ_FLAG_HIDDEN);
+                    // 登录成功通常跳转主菜单 
+                    _ui_screen_change(&ui_Screen_main_menu, LV_SCR_LOAD_ANIM_FADE_ON, 500, 1000, &ui_Screen_main_menu_screen_init);
+                } else {
+                    lv_obj_clear_flag(ui_Container_login_fail, LV_OBJ_FLAG_HIDDEN);
+                    lv_timer_create(hide_ui_timer_cb, 3000, ui_Container_login_fail);
+                }
             }
-            g_player.has_update = 0; // 处理完重置
+            g_player.has_update = 0; 
         }
 
         lv_timer_handler(); 
