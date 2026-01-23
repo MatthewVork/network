@@ -8,7 +8,8 @@ Player players[MAX_CLIENTS];
 ChessRoom rooms[MAX_ROOMS];
 
 // 基础响应函数
-void send_json_response(int fd, const char* status, const char* msg) {
+void send_json_response(int fd, const char* status, const char* msg) 
+{
     cJSON *reply = cJSON_CreateObject();
     cJSON_AddStringToObject(reply, "status", status);
     cJSON_AddStringToObject(reply, "msg", msg);
@@ -19,7 +20,8 @@ void send_json_response(int fd, const char* status, const char* msg) {
 }
 
 // 注册处理逻辑
-void handle_register(int fd, cJSON *root) {
+void handle_register(int fd, cJSON *root) 
+{
     cJSON *user_item = cJSON_GetObjectItem(root, "user");
     cJSON *pass_item = cJSON_GetObjectItem(root, "pass");
 

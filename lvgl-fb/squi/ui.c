@@ -49,6 +49,12 @@ lv_obj_t * ui_Keyboard_register;
 void ui_event_Button_back_login_screen(lv_event_t * e);
 lv_obj_t * ui_Button_back_login_screen;
 lv_obj_t * ui_Label_dummy4;
+lv_obj_t * ui_Container_register_success;
+lv_obj_t * ui_Panel_register_success;
+lv_obj_t * ui_Label_register_success;
+lv_obj_t * ui_Container_register_fail;
+lv_obj_t * ui_Panel_register_fail;
+lv_obj_t * ui_Label_register_fail;
 
 
 // SCREEN: ui_Screen_main_menu

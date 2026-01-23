@@ -6,6 +6,13 @@
 
 extern int client_fd; 
 
+static void hide_register_result_cb(lv_timer_t * t)
+{
+    lv_obj_t * container = (lv_obj_t *)t->user_data;
+    lv_obj_add_flag(container, LV_OBJ_FLAG_HIDDEN); // 隐藏对应的容器
+    lv_timer_del(t); // 销毁定时器，防止重复执行
+}
+
 // --- 注册按钮事件 ---
 void User_register(lv_event_t * e)
 {
