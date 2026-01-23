@@ -9136,7 +9136,7 @@
               {
                 "nid": -2008445218,
                 "strtype": "OBJECT/Hidden",
-                "strval": "False",
+                "strval": "True",
                 "InheritedType": 2
               },
               {
@@ -10022,7 +10022,7 @@
               {
                 "nid": -1793004445,
                 "strtype": "OBJECT/Hidden",
-                "strval": "False",
+                "strval": "True",
                 "InheritedType": 2
               },
               {
@@ -13408,9 +13408,9 @@
     "theme_dark": false,
     "theme_color1": 5,
     "theme_color2": 0,
-    "uiExportFolderPath": "C:\\Users\\Matthew\\Desktop\\09-network\\lvgl-fb\\squi",
+    "uiExportFolderPath": "C:\\Users\\18450\\OneDrive\\Desktop\\lvgl_arm\\project_0120\\network\\lvgl-fb\\squi",
     "projectExportFolderPath": "",
-    "backup_cnt": 54,
+    "backup_cnt": 56,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",
