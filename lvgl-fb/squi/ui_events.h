@@ -10,6 +10,7 @@
 extern "C" {
 #endif
 
+void Text_clean(lv_event_t * e);
 void User_login(lv_event_t * e);
 void User_register(lv_event_t * e);
 

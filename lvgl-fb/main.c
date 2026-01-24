@@ -91,6 +91,10 @@ int main(int argc, char **argv) {
                 if (strcmp((char*)g_player.status, "success") == 0) {
                     lv_obj_clear_flag(ui_Container_register_success, LV_OBJ_FLAG_HIDDEN);
                     lv_timer_create(hide_ui_timer_cb, 3000, ui_Container_register_success);
+                    
+                    // 3. 同时设置一个带延迟的屏幕切换 (比如 2 秒后开始切换)
+                    // 参数说明：目标屏幕, 动画效果, 动画时长, 延迟时间, 初始化函数
+                    _ui_screen_change(&ui_Screen_login, LV_SCR_LOAD_ANIM_FADE_ON, 500, 2000, &ui_Screen_login_screen_init);
                 } 
                 else {
                     // 这里就是你要的：去除隐藏标志
@@ -98,16 +102,31 @@ int main(int argc, char **argv) {
                     lv_timer_create(hide_ui_timer_cb, 3000, ui_Container_register_fail);
                 }
             } 
-            // 2. 处理登录反馈 (Type 2)
+
+            // --- 2. 处理登录反馈 (Type 2) ---
             else if (g_player.msg_type == 2) {
-                if (strcmp((char*)g_player.status, "success") == 0) {
+                if (strcmp((char*)g_player.status, "success") == 0) 
+                {
+                    // 1. 立即显示提示
                     lv_obj_clear_flag(ui_Container_login_success, LV_OBJ_FLAG_HIDDEN);
+                    
+                    // 2. 优化：定时器设为 1.2 秒后隐藏（略早于跳转完成时间）
+                    // 这样可以确保在该屏幕“彻底卸载”前，容器状态已经重置为 HIDDEN
+                    lv_timer_create(hide_ui_timer_cb, 1200, ui_Container_login_success);
+
+                    // 3. 执行屏幕切换，延迟 1.5 秒
+                    // 这个 1.5s 延迟能保证用户看清“登录成功”四个字
                     _ui_screen_change(&ui_Screen_main_menu, LV_SCR_LOAD_ANIM_FADE_ON, 500, 1000, &ui_Screen_main_menu_screen_init);
-                } else {
+                } 
+                else 
+                {
+                    // 登录失败：显示红色提示
                     lv_obj_clear_flag(ui_Container_login_fail, LV_OBJ_FLAG_HIDDEN);
+                    // 失败不需要跳走，所以时间给足 3 秒
                     lv_timer_create(hide_ui_timer_cb, 3000, ui_Container_login_fail);
                 }
             }
+
             g_player.has_update = 0; 
         }
         lv_timer_handler(); 

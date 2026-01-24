@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb
+CMAKE_SOURCE_DIR = /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/build-pc
+CMAKE_BINARY_DIR = /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/build-pc
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/build-pc/CMakeFiles /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/build-pc//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/build-pc/CMakeFiles /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/build-pc//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/build-pc/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/build-pc/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -4881,6 +4881,366 @@ squi/fonts/ui_font_Black.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/fonts/ui_font_Black.c.s
 .PHONY : squi/fonts/ui_font_Black.c.s
 
+squi/images/ui_img_chess_cannons_black_png.o: squi/images/ui_img_chess_cannons_black_png.c.o
+.PHONY : squi/images/ui_img_chess_cannons_black_png.o
+
+# target to build an object file
+squi/images/ui_img_chess_cannons_black_png.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_cannons_black_png.c.o
+.PHONY : squi/images/ui_img_chess_cannons_black_png.c.o
+
+squi/images/ui_img_chess_cannons_black_png.i: squi/images/ui_img_chess_cannons_black_png.c.i
+.PHONY : squi/images/ui_img_chess_cannons_black_png.i
+
+# target to preprocess a source file
+squi/images/ui_img_chess_cannons_black_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_cannons_black_png.c.i
+.PHONY : squi/images/ui_img_chess_cannons_black_png.c.i
+
+squi/images/ui_img_chess_cannons_black_png.s: squi/images/ui_img_chess_cannons_black_png.c.s
+.PHONY : squi/images/ui_img_chess_cannons_black_png.s
+
+# target to generate assembly for a file
+squi/images/ui_img_chess_cannons_black_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_cannons_black_png.c.s
+.PHONY : squi/images/ui_img_chess_cannons_black_png.c.s
+
+squi/images/ui_img_chess_cannons_red_png.o: squi/images/ui_img_chess_cannons_red_png.c.o
+.PHONY : squi/images/ui_img_chess_cannons_red_png.o
+
+# target to build an object file
+squi/images/ui_img_chess_cannons_red_png.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_cannons_red_png.c.o
+.PHONY : squi/images/ui_img_chess_cannons_red_png.c.o
+
+squi/images/ui_img_chess_cannons_red_png.i: squi/images/ui_img_chess_cannons_red_png.c.i
+.PHONY : squi/images/ui_img_chess_cannons_red_png.i
+
+# target to preprocess a source file
+squi/images/ui_img_chess_cannons_red_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_cannons_red_png.c.i
+.PHONY : squi/images/ui_img_chess_cannons_red_png.c.i
+
+squi/images/ui_img_chess_cannons_red_png.s: squi/images/ui_img_chess_cannons_red_png.c.s
+.PHONY : squi/images/ui_img_chess_cannons_red_png.s
+
+# target to generate assembly for a file
+squi/images/ui_img_chess_cannons_red_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_cannons_red_png.c.s
+.PHONY : squi/images/ui_img_chess_cannons_red_png.c.s
+
+squi/images/ui_img_chess_elephants_black_png.o: squi/images/ui_img_chess_elephants_black_png.c.o
+.PHONY : squi/images/ui_img_chess_elephants_black_png.o
+
+# target to build an object file
+squi/images/ui_img_chess_elephants_black_png.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_elephants_black_png.c.o
+.PHONY : squi/images/ui_img_chess_elephants_black_png.c.o
+
+squi/images/ui_img_chess_elephants_black_png.i: squi/images/ui_img_chess_elephants_black_png.c.i
+.PHONY : squi/images/ui_img_chess_elephants_black_png.i
+
+# target to preprocess a source file
+squi/images/ui_img_chess_elephants_black_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_elephants_black_png.c.i
+.PHONY : squi/images/ui_img_chess_elephants_black_png.c.i
+
+squi/images/ui_img_chess_elephants_black_png.s: squi/images/ui_img_chess_elephants_black_png.c.s
+.PHONY : squi/images/ui_img_chess_elephants_black_png.s
+
+# target to generate assembly for a file
+squi/images/ui_img_chess_elephants_black_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_elephants_black_png.c.s
+.PHONY : squi/images/ui_img_chess_elephants_black_png.c.s
+
+squi/images/ui_img_chess_elephants_red_png.o: squi/images/ui_img_chess_elephants_red_png.c.o
+.PHONY : squi/images/ui_img_chess_elephants_red_png.o
+
+# target to build an object file
+squi/images/ui_img_chess_elephants_red_png.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_elephants_red_png.c.o
+.PHONY : squi/images/ui_img_chess_elephants_red_png.c.o
+
+squi/images/ui_img_chess_elephants_red_png.i: squi/images/ui_img_chess_elephants_red_png.c.i
+.PHONY : squi/images/ui_img_chess_elephants_red_png.i
+
+# target to preprocess a source file
+squi/images/ui_img_chess_elephants_red_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_elephants_red_png.c.i
+.PHONY : squi/images/ui_img_chess_elephants_red_png.c.i
+
+squi/images/ui_img_chess_elephants_red_png.s: squi/images/ui_img_chess_elephants_red_png.c.s
+.PHONY : squi/images/ui_img_chess_elephants_red_png.s
+
+# target to generate assembly for a file
+squi/images/ui_img_chess_elephants_red_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_elephants_red_png.c.s
+.PHONY : squi/images/ui_img_chess_elephants_red_png.c.s
+
+squi/images/ui_img_chess_general_red_png.o: squi/images/ui_img_chess_general_red_png.c.o
+.PHONY : squi/images/ui_img_chess_general_red_png.o
+
+# target to build an object file
+squi/images/ui_img_chess_general_red_png.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_general_red_png.c.o
+.PHONY : squi/images/ui_img_chess_general_red_png.c.o
+
+squi/images/ui_img_chess_general_red_png.i: squi/images/ui_img_chess_general_red_png.c.i
+.PHONY : squi/images/ui_img_chess_general_red_png.i
+
+# target to preprocess a source file
+squi/images/ui_img_chess_general_red_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_general_red_png.c.i
+.PHONY : squi/images/ui_img_chess_general_red_png.c.i
+
+squi/images/ui_img_chess_general_red_png.s: squi/images/ui_img_chess_general_red_png.c.s
+.PHONY : squi/images/ui_img_chess_general_red_png.s
+
+# target to generate assembly for a file
+squi/images/ui_img_chess_general_red_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_general_red_png.c.s
+.PHONY : squi/images/ui_img_chess_general_red_png.c.s
+
+squi/images/ui_img_chess_king_black_png.o: squi/images/ui_img_chess_king_black_png.c.o
+.PHONY : squi/images/ui_img_chess_king_black_png.o
+
+# target to build an object file
+squi/images/ui_img_chess_king_black_png.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_king_black_png.c.o
+.PHONY : squi/images/ui_img_chess_king_black_png.c.o
+
+squi/images/ui_img_chess_king_black_png.i: squi/images/ui_img_chess_king_black_png.c.i
+.PHONY : squi/images/ui_img_chess_king_black_png.i
+
+# target to preprocess a source file
+squi/images/ui_img_chess_king_black_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_king_black_png.c.i
+.PHONY : squi/images/ui_img_chess_king_black_png.c.i
+
+squi/images/ui_img_chess_king_black_png.s: squi/images/ui_img_chess_king_black_png.c.s
+.PHONY : squi/images/ui_img_chess_king_black_png.s
+
+# target to generate assembly for a file
+squi/images/ui_img_chess_king_black_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_king_black_png.c.s
+.PHONY : squi/images/ui_img_chess_king_black_png.c.s
+
+squi/images/ui_img_chess_knights_black_png.o: squi/images/ui_img_chess_knights_black_png.c.o
+.PHONY : squi/images/ui_img_chess_knights_black_png.o
+
+# target to build an object file
+squi/images/ui_img_chess_knights_black_png.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_knights_black_png.c.o
+.PHONY : squi/images/ui_img_chess_knights_black_png.c.o
+
+squi/images/ui_img_chess_knights_black_png.i: squi/images/ui_img_chess_knights_black_png.c.i
+.PHONY : squi/images/ui_img_chess_knights_black_png.i
+
+# target to preprocess a source file
+squi/images/ui_img_chess_knights_black_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_knights_black_png.c.i
+.PHONY : squi/images/ui_img_chess_knights_black_png.c.i
+
+squi/images/ui_img_chess_knights_black_png.s: squi/images/ui_img_chess_knights_black_png.c.s
+.PHONY : squi/images/ui_img_chess_knights_black_png.s
+
+# target to generate assembly for a file
+squi/images/ui_img_chess_knights_black_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_knights_black_png.c.s
+.PHONY : squi/images/ui_img_chess_knights_black_png.c.s
+
+squi/images/ui_img_chess_knights_red_png.o: squi/images/ui_img_chess_knights_red_png.c.o
+.PHONY : squi/images/ui_img_chess_knights_red_png.o
+
+# target to build an object file
+squi/images/ui_img_chess_knights_red_png.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_knights_red_png.c.o
+.PHONY : squi/images/ui_img_chess_knights_red_png.c.o
+
+squi/images/ui_img_chess_knights_red_png.i: squi/images/ui_img_chess_knights_red_png.c.i
+.PHONY : squi/images/ui_img_chess_knights_red_png.i
+
+# target to preprocess a source file
+squi/images/ui_img_chess_knights_red_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_knights_red_png.c.i
+.PHONY : squi/images/ui_img_chess_knights_red_png.c.i
+
+squi/images/ui_img_chess_knights_red_png.s: squi/images/ui_img_chess_knights_red_png.c.s
+.PHONY : squi/images/ui_img_chess_knights_red_png.s
+
+# target to generate assembly for a file
+squi/images/ui_img_chess_knights_red_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_knights_red_png.c.s
+.PHONY : squi/images/ui_img_chess_knights_red_png.c.s
+
+squi/images/ui_img_chess_mandarins_black_png.o: squi/images/ui_img_chess_mandarins_black_png.c.o
+.PHONY : squi/images/ui_img_chess_mandarins_black_png.o
+
+# target to build an object file
+squi/images/ui_img_chess_mandarins_black_png.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_mandarins_black_png.c.o
+.PHONY : squi/images/ui_img_chess_mandarins_black_png.c.o
+
+squi/images/ui_img_chess_mandarins_black_png.i: squi/images/ui_img_chess_mandarins_black_png.c.i
+.PHONY : squi/images/ui_img_chess_mandarins_black_png.i
+
+# target to preprocess a source file
+squi/images/ui_img_chess_mandarins_black_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_mandarins_black_png.c.i
+.PHONY : squi/images/ui_img_chess_mandarins_black_png.c.i
+
+squi/images/ui_img_chess_mandarins_black_png.s: squi/images/ui_img_chess_mandarins_black_png.c.s
+.PHONY : squi/images/ui_img_chess_mandarins_black_png.s
+
+# target to generate assembly for a file
+squi/images/ui_img_chess_mandarins_black_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_mandarins_black_png.c.s
+.PHONY : squi/images/ui_img_chess_mandarins_black_png.c.s
+
+squi/images/ui_img_chess_mandarins_red_png.o: squi/images/ui_img_chess_mandarins_red_png.c.o
+.PHONY : squi/images/ui_img_chess_mandarins_red_png.o
+
+# target to build an object file
+squi/images/ui_img_chess_mandarins_red_png.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_mandarins_red_png.c.o
+.PHONY : squi/images/ui_img_chess_mandarins_red_png.c.o
+
+squi/images/ui_img_chess_mandarins_red_png.i: squi/images/ui_img_chess_mandarins_red_png.c.i
+.PHONY : squi/images/ui_img_chess_mandarins_red_png.i
+
+# target to preprocess a source file
+squi/images/ui_img_chess_mandarins_red_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_mandarins_red_png.c.i
+.PHONY : squi/images/ui_img_chess_mandarins_red_png.c.i
+
+squi/images/ui_img_chess_mandarins_red_png.s: squi/images/ui_img_chess_mandarins_red_png.c.s
+.PHONY : squi/images/ui_img_chess_mandarins_red_png.s
+
+# target to generate assembly for a file
+squi/images/ui_img_chess_mandarins_red_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_mandarins_red_png.c.s
+.PHONY : squi/images/ui_img_chess_mandarins_red_png.c.s
+
+squi/images/ui_img_chess_pawns_black_png.o: squi/images/ui_img_chess_pawns_black_png.c.o
+.PHONY : squi/images/ui_img_chess_pawns_black_png.o
+
+# target to build an object file
+squi/images/ui_img_chess_pawns_black_png.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_pawns_black_png.c.o
+.PHONY : squi/images/ui_img_chess_pawns_black_png.c.o
+
+squi/images/ui_img_chess_pawns_black_png.i: squi/images/ui_img_chess_pawns_black_png.c.i
+.PHONY : squi/images/ui_img_chess_pawns_black_png.i
+
+# target to preprocess a source file
+squi/images/ui_img_chess_pawns_black_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_pawns_black_png.c.i
+.PHONY : squi/images/ui_img_chess_pawns_black_png.c.i
+
+squi/images/ui_img_chess_pawns_black_png.s: squi/images/ui_img_chess_pawns_black_png.c.s
+.PHONY : squi/images/ui_img_chess_pawns_black_png.s
+
+# target to generate assembly for a file
+squi/images/ui_img_chess_pawns_black_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_pawns_black_png.c.s
+.PHONY : squi/images/ui_img_chess_pawns_black_png.c.s
+
+squi/images/ui_img_chess_pawns_red_png.o: squi/images/ui_img_chess_pawns_red_png.c.o
+.PHONY : squi/images/ui_img_chess_pawns_red_png.o
+
+# target to build an object file
+squi/images/ui_img_chess_pawns_red_png.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_pawns_red_png.c.o
+.PHONY : squi/images/ui_img_chess_pawns_red_png.c.o
+
+squi/images/ui_img_chess_pawns_red_png.i: squi/images/ui_img_chess_pawns_red_png.c.i
+.PHONY : squi/images/ui_img_chess_pawns_red_png.i
+
+# target to preprocess a source file
+squi/images/ui_img_chess_pawns_red_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_pawns_red_png.c.i
+.PHONY : squi/images/ui_img_chess_pawns_red_png.c.i
+
+squi/images/ui_img_chess_pawns_red_png.s: squi/images/ui_img_chess_pawns_red_png.c.s
+.PHONY : squi/images/ui_img_chess_pawns_red_png.s
+
+# target to generate assembly for a file
+squi/images/ui_img_chess_pawns_red_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_pawns_red_png.c.s
+.PHONY : squi/images/ui_img_chess_pawns_red_png.c.s
+
+squi/images/ui_img_chess_rooks_black_png.o: squi/images/ui_img_chess_rooks_black_png.c.o
+.PHONY : squi/images/ui_img_chess_rooks_black_png.o
+
+# target to build an object file
+squi/images/ui_img_chess_rooks_black_png.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_rooks_black_png.c.o
+.PHONY : squi/images/ui_img_chess_rooks_black_png.c.o
+
+squi/images/ui_img_chess_rooks_black_png.i: squi/images/ui_img_chess_rooks_black_png.c.i
+.PHONY : squi/images/ui_img_chess_rooks_black_png.i
+
+# target to preprocess a source file
+squi/images/ui_img_chess_rooks_black_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_rooks_black_png.c.i
+.PHONY : squi/images/ui_img_chess_rooks_black_png.c.i
+
+squi/images/ui_img_chess_rooks_black_png.s: squi/images/ui_img_chess_rooks_black_png.c.s
+.PHONY : squi/images/ui_img_chess_rooks_black_png.s
+
+# target to generate assembly for a file
+squi/images/ui_img_chess_rooks_black_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_rooks_black_png.c.s
+.PHONY : squi/images/ui_img_chess_rooks_black_png.c.s
+
+squi/images/ui_img_chess_rooks_red_png.o: squi/images/ui_img_chess_rooks_red_png.c.o
+.PHONY : squi/images/ui_img_chess_rooks_red_png.o
+
+# target to build an object file
+squi/images/ui_img_chess_rooks_red_png.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_rooks_red_png.c.o
+.PHONY : squi/images/ui_img_chess_rooks_red_png.c.o
+
+squi/images/ui_img_chess_rooks_red_png.i: squi/images/ui_img_chess_rooks_red_png.c.i
+.PHONY : squi/images/ui_img_chess_rooks_red_png.i
+
+# target to preprocess a source file
+squi/images/ui_img_chess_rooks_red_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_rooks_red_png.c.i
+.PHONY : squi/images/ui_img_chess_rooks_red_png.c.i
+
+squi/images/ui_img_chess_rooks_red_png.s: squi/images/ui_img_chess_rooks_red_png.c.s
+.PHONY : squi/images/ui_img_chess_rooks_red_png.s
+
+# target to generate assembly for a file
+squi/images/ui_img_chess_rooks_red_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chess_rooks_red_png.c.s
+.PHONY : squi/images/ui_img_chess_rooks_red_png.c.s
+
+squi/images/ui_img_chessboard_png.o: squi/images/ui_img_chessboard_png.c.o
+.PHONY : squi/images/ui_img_chessboard_png.o
+
+# target to build an object file
+squi/images/ui_img_chessboard_png.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chessboard_png.c.o
+.PHONY : squi/images/ui_img_chessboard_png.c.o
+
+squi/images/ui_img_chessboard_png.i: squi/images/ui_img_chessboard_png.c.i
+.PHONY : squi/images/ui_img_chessboard_png.i
+
+# target to preprocess a source file
+squi/images/ui_img_chessboard_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chessboard_png.c.i
+.PHONY : squi/images/ui_img_chessboard_png.c.i
+
+squi/images/ui_img_chessboard_png.s: squi/images/ui_img_chessboard_png.c.s
+.PHONY : squi/images/ui_img_chessboard_png.s
+
+# target to generate assembly for a file
+squi/images/ui_img_chessboard_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/images/ui_img_chessboard_png.c.s
+.PHONY : squi/images/ui_img_chessboard_png.c.s
+
 squi/screens/ui_Screen_login.o: squi/screens/ui_Screen_login.c.o
 .PHONY : squi/screens/ui_Screen_login.o
 
@@ -4929,6 +5289,30 @@ squi/screens/ui_Screen_main_menu.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/screens/ui_Screen_main_menu.c.s
 .PHONY : squi/screens/ui_Screen_main_menu.c.s
 
+squi/screens/ui_Screen_match.o: squi/screens/ui_Screen_match.c.o
+.PHONY : squi/screens/ui_Screen_match.o
+
+# target to build an object file
+squi/screens/ui_Screen_match.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/screens/ui_Screen_match.c.o
+.PHONY : squi/screens/ui_Screen_match.c.o
+
+squi/screens/ui_Screen_match.i: squi/screens/ui_Screen_match.c.i
+.PHONY : squi/screens/ui_Screen_match.i
+
+# target to preprocess a source file
+squi/screens/ui_Screen_match.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/screens/ui_Screen_match.c.i
+.PHONY : squi/screens/ui_Screen_match.c.i
+
+squi/screens/ui_Screen_match.s: squi/screens/ui_Screen_match.c.s
+.PHONY : squi/screens/ui_Screen_match.s
+
+# target to generate assembly for a file
+squi/screens/ui_Screen_match.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/screens/ui_Screen_match.c.s
+.PHONY : squi/screens/ui_Screen_match.c.s
+
 squi/screens/ui_Screen_register.o: squi/screens/ui_Screen_register.c.o
 .PHONY : squi/screens/ui_Screen_register.o
 
@@ -4952,6 +5336,30 @@ squi/screens/ui_Screen_register.s: squi/screens/ui_Screen_register.c.s
 squi/screens/ui_Screen_register.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/screens/ui_Screen_register.c.s
 .PHONY : squi/screens/ui_Screen_register.c.s
+
+squi/screens/ui_Screen_room.o: squi/screens/ui_Screen_room.c.o
+.PHONY : squi/screens/ui_Screen_room.o
+
+# target to build an object file
+squi/screens/ui_Screen_room.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/screens/ui_Screen_room.c.o
+.PHONY : squi/screens/ui_Screen_room.c.o
+
+squi/screens/ui_Screen_room.i: squi/screens/ui_Screen_room.c.i
+.PHONY : squi/screens/ui_Screen_room.i
+
+# target to preprocess a source file
+squi/screens/ui_Screen_room.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/screens/ui_Screen_room.c.i
+.PHONY : squi/screens/ui_Screen_room.c.i
+
+squi/screens/ui_Screen_room.s: squi/screens/ui_Screen_room.c.s
+.PHONY : squi/screens/ui_Screen_room.s
+
+# target to generate assembly for a file
+squi/screens/ui_Screen_room.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/screens/ui_Screen_room.c.s
+.PHONY : squi/screens/ui_Screen_room.c.s
 
 squi/ui.o: squi/ui.c.o
 .PHONY : squi/ui.o
@@ -5676,15 +6084,66 @@ help:
 	@echo "... squi/fonts/ui_font_Black.o"
 	@echo "... squi/fonts/ui_font_Black.i"
 	@echo "... squi/fonts/ui_font_Black.s"
+	@echo "... squi/images/ui_img_chess_cannons_black_png.o"
+	@echo "... squi/images/ui_img_chess_cannons_black_png.i"
+	@echo "... squi/images/ui_img_chess_cannons_black_png.s"
+	@echo "... squi/images/ui_img_chess_cannons_red_png.o"
+	@echo "... squi/images/ui_img_chess_cannons_red_png.i"
+	@echo "... squi/images/ui_img_chess_cannons_red_png.s"
+	@echo "... squi/images/ui_img_chess_elephants_black_png.o"
+	@echo "... squi/images/ui_img_chess_elephants_black_png.i"
+	@echo "... squi/images/ui_img_chess_elephants_black_png.s"
+	@echo "... squi/images/ui_img_chess_elephants_red_png.o"
+	@echo "... squi/images/ui_img_chess_elephants_red_png.i"
+	@echo "... squi/images/ui_img_chess_elephants_red_png.s"
+	@echo "... squi/images/ui_img_chess_general_red_png.o"
+	@echo "... squi/images/ui_img_chess_general_red_png.i"
+	@echo "... squi/images/ui_img_chess_general_red_png.s"
+	@echo "... squi/images/ui_img_chess_king_black_png.o"
+	@echo "... squi/images/ui_img_chess_king_black_png.i"
+	@echo "... squi/images/ui_img_chess_king_black_png.s"
+	@echo "... squi/images/ui_img_chess_knights_black_png.o"
+	@echo "... squi/images/ui_img_chess_knights_black_png.i"
+	@echo "... squi/images/ui_img_chess_knights_black_png.s"
+	@echo "... squi/images/ui_img_chess_knights_red_png.o"
+	@echo "... squi/images/ui_img_chess_knights_red_png.i"
+	@echo "... squi/images/ui_img_chess_knights_red_png.s"
+	@echo "... squi/images/ui_img_chess_mandarins_black_png.o"
+	@echo "... squi/images/ui_img_chess_mandarins_black_png.i"
+	@echo "... squi/images/ui_img_chess_mandarins_black_png.s"
+	@echo "... squi/images/ui_img_chess_mandarins_red_png.o"
+	@echo "... squi/images/ui_img_chess_mandarins_red_png.i"
+	@echo "... squi/images/ui_img_chess_mandarins_red_png.s"
+	@echo "... squi/images/ui_img_chess_pawns_black_png.o"
+	@echo "... squi/images/ui_img_chess_pawns_black_png.i"
+	@echo "... squi/images/ui_img_chess_pawns_black_png.s"
+	@echo "... squi/images/ui_img_chess_pawns_red_png.o"
+	@echo "... squi/images/ui_img_chess_pawns_red_png.i"
+	@echo "... squi/images/ui_img_chess_pawns_red_png.s"
+	@echo "... squi/images/ui_img_chess_rooks_black_png.o"
+	@echo "... squi/images/ui_img_chess_rooks_black_png.i"
+	@echo "... squi/images/ui_img_chess_rooks_black_png.s"
+	@echo "... squi/images/ui_img_chess_rooks_red_png.o"
+	@echo "... squi/images/ui_img_chess_rooks_red_png.i"
+	@echo "... squi/images/ui_img_chess_rooks_red_png.s"
+	@echo "... squi/images/ui_img_chessboard_png.o"
+	@echo "... squi/images/ui_img_chessboard_png.i"
+	@echo "... squi/images/ui_img_chessboard_png.s"
 	@echo "... squi/screens/ui_Screen_login.o"
 	@echo "... squi/screens/ui_Screen_login.i"
 	@echo "... squi/screens/ui_Screen_login.s"
 	@echo "... squi/screens/ui_Screen_main_menu.o"
 	@echo "... squi/screens/ui_Screen_main_menu.i"
 	@echo "... squi/screens/ui_Screen_main_menu.s"
+	@echo "... squi/screens/ui_Screen_match.o"
+	@echo "... squi/screens/ui_Screen_match.i"
+	@echo "... squi/screens/ui_Screen_match.s"
 	@echo "... squi/screens/ui_Screen_register.o"
 	@echo "... squi/screens/ui_Screen_register.i"
 	@echo "... squi/screens/ui_Screen_register.s"
+	@echo "... squi/screens/ui_Screen_room.o"
+	@echo "... squi/screens/ui_Screen_room.i"
+	@echo "... squi/screens/ui_Screen_room.s"
 	@echo "... squi/ui.o"
 	@echo "... squi/ui.i"
 	@echo "... squi/ui.s"

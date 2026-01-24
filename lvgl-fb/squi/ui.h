@@ -17,6 +17,7 @@ extern "C" {
 
 // SCREEN: ui_Screen_login
 void ui_Screen_login_screen_init(void);
+void ui_event_Screen_login(lv_event_t * e);
 extern lv_obj_t * ui_Screen_login;
 extern lv_obj_t * ui_Container_login_menu;
 void ui_event_Username_login(lv_event_t * e);
@@ -39,6 +40,7 @@ extern lv_obj_t * ui_Panel_login_fail;
 extern lv_obj_t * ui_Label_login_fail;
 // SCREEN: ui_Screen_register
 void ui_Screen_register_screen_init(void);
+void ui_event_Screen_register(lv_event_t * e);
 extern lv_obj_t * ui_Screen_register;
 extern lv_obj_t * ui_Container_register_menu;
 void ui_event_Username_register(lv_event_t * e);
@@ -72,9 +74,74 @@ extern lv_obj_t * ui_Button4;
 extern lv_obj_t * ui_Label5;
 extern lv_obj_t * ui_Button5;
 extern lv_obj_t * ui_Label6;
+// SCREEN: ui_Screen_room
+void ui_Screen_room_screen_init(void);
+extern lv_obj_t * ui_Screen_room;
+extern lv_obj_t * ui_Container_screen_main_menu1;
+extern lv_obj_t * ui_Label1;
+extern lv_obj_t * ui_Panel1;
+extern lv_obj_t * ui_Button1;
+extern lv_obj_t * ui_Label2;
+extern lv_obj_t * ui_Button2;
+extern lv_obj_t * ui_Label4;
+// SCREEN: ui_Screen_match
+void ui_Screen_match_screen_init(void);
+extern lv_obj_t * ui_Screen_match;
+extern lv_obj_t * ui_Container1;
+extern lv_obj_t * ui_Image_chessboard;
+extern lv_obj_t * ui_Image_Chess_King_Black;
+extern lv_obj_t * ui_Image_Mandarins_Black_Left;
+extern lv_obj_t * ui_Image_Mandarins_Black_Right;
+extern lv_obj_t * ui_Image_Elephants_Black_Left;
+extern lv_obj_t * ui_Image_Elephants_Black_Right;
+extern lv_obj_t * ui_Image_Knights_Black_Left;
+extern lv_obj_t * ui_Image_Knights_Black_Right;
+extern lv_obj_t * ui_Image_Rooks_Black_Left;
+extern lv_obj_t * ui_Image_Rooks_Black_Right;
+extern lv_obj_t * ui_Image_Cannons_Black_Left;
+extern lv_obj_t * ui_Image_Cannons_Black_Right;
+extern lv_obj_t * ui_Image_Pawns_Black1;
+extern lv_obj_t * ui_Image_Pawns_Black2;
+extern lv_obj_t * ui_Image_Pawns_Black3;
+extern lv_obj_t * ui_Image_Pawns_Black4;
+extern lv_obj_t * ui_Image_Pawns_Black5;
+extern lv_obj_t * ui_Image_General_Red;
+extern lv_obj_t * ui_Image_Image_Mandarins_Red_Left;
+extern lv_obj_t * ui_Image_Image_Mandarins_Red_Right;
+extern lv_obj_t * ui_Image_Elephants_Red_Left;
+extern lv_obj_t * ui_Image_Elephants_Red_Right;
+extern lv_obj_t * ui_Image_Knights_Red_Left;
+extern lv_obj_t * ui_Image_Knights_Red_Right;
+extern lv_obj_t * ui_Image_Rooks_Red_Left;
+extern lv_obj_t * ui_Image_Rooks_Red_Right;
+extern lv_obj_t * ui_Image_Cannons_Red_Left;
+extern lv_obj_t * ui_Image_Cannons_Red_Right;
+extern lv_obj_t * ui_Image_Pawns_Red1;
+extern lv_obj_t * ui_Image_Pawns_Red2;
+extern lv_obj_t * ui_Image_Pawns_Red3;
+extern lv_obj_t * ui_Image_Pawns_Red4;
+extern lv_obj_t * ui_Image_Pawns_Red5;
+extern lv_obj_t * ui_Button3;
+extern lv_obj_t * ui_Button6;
+extern lv_obj_t * ui_Label7;
 extern lv_obj_t * ui____initial_actions0;
 
 
+LV_IMG_DECLARE(ui_img_chessboard_png);    // assets/Chessboard.png
+LV_IMG_DECLARE(ui_img_chess_king_black_png);    // assets/Chess_king_Black.png
+LV_IMG_DECLARE(ui_img_chess_mandarins_black_png);    // assets/Chess_Mandarins_Black.png
+LV_IMG_DECLARE(ui_img_chess_elephants_black_png);    // assets/Chess_Elephants_Black.png
+LV_IMG_DECLARE(ui_img_chess_knights_black_png);    // assets/Chess_Knights_Black.png
+LV_IMG_DECLARE(ui_img_chess_rooks_black_png);    // assets/Chess_Rooks_Black.png
+LV_IMG_DECLARE(ui_img_chess_cannons_black_png);    // assets/Chess_Cannons_Black.png
+LV_IMG_DECLARE(ui_img_chess_pawns_black_png);    // assets/Chess_Pawns_Black.png
+LV_IMG_DECLARE(ui_img_chess_general_red_png);    // assets/Chess_General_Red.png
+LV_IMG_DECLARE(ui_img_chess_mandarins_red_png);    // assets/Chess_Mandarins_Red.png
+LV_IMG_DECLARE(ui_img_chess_elephants_red_png);    // assets/Chess_Elephants_Red.png
+LV_IMG_DECLARE(ui_img_chess_knights_red_png);    // assets/Chess_Knights_Red.png
+LV_IMG_DECLARE(ui_img_chess_rooks_red_png);    // assets/Chess_Rooks_Red.png
+LV_IMG_DECLARE(ui_img_chess_cannons_red_png);    // assets/Chess_Cannons_Red.png
+LV_IMG_DECLARE(ui_img_chess_pawns_red_png);    // assets/Chess_Pawns_Red.png
 
 
 

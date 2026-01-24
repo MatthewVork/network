@@ -11,6 +11,7 @@
 
 // SCREEN: ui_Screen_login
 void ui_Screen_login_screen_init(void);
+void ui_event_Screen_login(lv_event_t * e);
 lv_obj_t * ui_Screen_login;
 lv_obj_t * ui_Container_login_menu;
 void ui_event_Username_login(lv_event_t * e);
@@ -35,6 +36,7 @@ lv_obj_t * ui_Label_login_fail;
 
 // SCREEN: ui_Screen_register
 void ui_Screen_register_screen_init(void);
+void ui_event_Screen_register(lv_event_t * e);
 lv_obj_t * ui_Screen_register;
 lv_obj_t * ui_Container_register_menu;
 void ui_event_Username_register(lv_event_t * e);
@@ -70,6 +72,60 @@ lv_obj_t * ui_Button4;
 lv_obj_t * ui_Label5;
 lv_obj_t * ui_Button5;
 lv_obj_t * ui_Label6;
+
+
+// SCREEN: ui_Screen_room
+void ui_Screen_room_screen_init(void);
+lv_obj_t * ui_Screen_room;
+lv_obj_t * ui_Container_screen_main_menu1;
+lv_obj_t * ui_Label1;
+lv_obj_t * ui_Panel1;
+lv_obj_t * ui_Button1;
+lv_obj_t * ui_Label2;
+lv_obj_t * ui_Button2;
+lv_obj_t * ui_Label4;
+
+
+// SCREEN: ui_Screen_match
+void ui_Screen_match_screen_init(void);
+lv_obj_t * ui_Screen_match;
+lv_obj_t * ui_Container1;
+lv_obj_t * ui_Image_chessboard;
+lv_obj_t * ui_Image_Chess_King_Black;
+lv_obj_t * ui_Image_Mandarins_Black_Left;
+lv_obj_t * ui_Image_Mandarins_Black_Right;
+lv_obj_t * ui_Image_Elephants_Black_Left;
+lv_obj_t * ui_Image_Elephants_Black_Right;
+lv_obj_t * ui_Image_Knights_Black_Left;
+lv_obj_t * ui_Image_Knights_Black_Right;
+lv_obj_t * ui_Image_Rooks_Black_Left;
+lv_obj_t * ui_Image_Rooks_Black_Right;
+lv_obj_t * ui_Image_Cannons_Black_Left;
+lv_obj_t * ui_Image_Cannons_Black_Right;
+lv_obj_t * ui_Image_Pawns_Black1;
+lv_obj_t * ui_Image_Pawns_Black2;
+lv_obj_t * ui_Image_Pawns_Black3;
+lv_obj_t * ui_Image_Pawns_Black4;
+lv_obj_t * ui_Image_Pawns_Black5;
+lv_obj_t * ui_Image_General_Red;
+lv_obj_t * ui_Image_Image_Mandarins_Red_Left;
+lv_obj_t * ui_Image_Image_Mandarins_Red_Right;
+lv_obj_t * ui_Image_Elephants_Red_Left;
+lv_obj_t * ui_Image_Elephants_Red_Right;
+lv_obj_t * ui_Image_Knights_Red_Left;
+lv_obj_t * ui_Image_Knights_Red_Right;
+lv_obj_t * ui_Image_Rooks_Red_Left;
+lv_obj_t * ui_Image_Rooks_Red_Right;
+lv_obj_t * ui_Image_Cannons_Red_Left;
+lv_obj_t * ui_Image_Cannons_Red_Right;
+lv_obj_t * ui_Image_Pawns_Red1;
+lv_obj_t * ui_Image_Pawns_Red2;
+lv_obj_t * ui_Image_Pawns_Red3;
+lv_obj_t * ui_Image_Pawns_Red4;
+lv_obj_t * ui_Image_Pawns_Red5;
+lv_obj_t * ui_Button3;
+lv_obj_t * ui_Button6;
+lv_obj_t * ui_Label7;
 lv_obj_t * ui____initial_actions0;
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
@@ -83,6 +139,14 @@ lv_obj_t * ui____initial_actions0;
 ///////////////////// ANIMATIONS ////////////////////
 
 ///////////////////// FUNCTIONS ////////////////////
+void ui_event_Screen_login(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_SCREEN_UNLOAD_START) {
+        Text_clean(e);
+    }
+}
 void ui_event_Username_login(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -121,6 +185,14 @@ void ui_event_Button_go_register(lv_event_t * e)
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_CLICKED) {
         _ui_screen_change(&ui_Screen_register, LV_SCR_LOAD_ANIM_FADE_ON, 500, 0, &ui_Screen_register_screen_init);
+    }
+}
+void ui_event_Screen_register(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_SCREEN_UNLOAD_START) {
+        Text_clean(e);
     }
 }
 void ui_event_Username_register(lv_event_t * e)
@@ -183,6 +255,8 @@ void ui_init(void)
     ui_Screen_login_screen_init();
     ui_Screen_register_screen_init();
     ui_Screen_main_menu_screen_init();
+    ui_Screen_room_screen_init();
+    ui_Screen_match_screen_init();
     ui____initial_actions0 = lv_obj_create(NULL);
     lv_disp_load_scr(ui_Screen_login);
 }

@@ -1,10 +1,27 @@
 SET(SOURCES screens/ui_Screen_login.c
     screens/ui_Screen_register.c
     screens/ui_Screen_main_menu.c
+    screens/ui_Screen_room.c
+    screens/ui_Screen_match.c
     ui.c
     components/ui_comp_hook.c
     ui_helpers.c
     ui_events.c
+    images/ui_img_chessboard_png.c
+    images/ui_img_chess_king_black_png.c
+    images/ui_img_chess_mandarins_black_png.c
+    images/ui_img_chess_elephants_black_png.c
+    images/ui_img_chess_knights_black_png.c
+    images/ui_img_chess_rooks_black_png.c
+    images/ui_img_chess_cannons_black_png.c
+    images/ui_img_chess_pawns_black_png.c
+    images/ui_img_chess_general_red_png.c
+    images/ui_img_chess_mandarins_red_png.c
+    images/ui_img_chess_elephants_red_png.c
+    images/ui_img_chess_knights_red_png.c
+    images/ui_img_chess_rooks_red_png.c
+    images/ui_img_chess_cannons_red_png.c
+    images/ui_img_chess_pawns_red_png.c
     fonts/ui_font_Black.c)
 
 add_library(ui ${SOURCES})

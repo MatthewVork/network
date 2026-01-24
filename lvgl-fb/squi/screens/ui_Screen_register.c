@@ -141,5 +141,6 @@ void ui_Screen_register_screen_init(void)
     lv_obj_add_event_cb(ui_Password_register, ui_event_Password_register, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button_register, ui_event_Button_register, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button_back_login_screen, ui_event_Button_back_login_screen, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_Screen_register, ui_event_Screen_register, LV_EVENT_ALL, NULL);
 
 }
