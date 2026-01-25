@@ -13,6 +13,8 @@ extern "C" {
 #include "lvgl/lvgl.h"
 
 #include "ui_helpers.h"
+#include "components/ui_comp.h"
+#include "components/ui_comp_hook.h"
 #include "ui_events.h"
 
 // SCREEN: ui_Screen_login
@@ -69,9 +71,10 @@ extern lv_obj_t * ui_Label3;
 void ui_event_Button_back_login_screen2(lv_event_t * e);
 extern lv_obj_t * ui_Button_back_login_screen2;
 extern lv_obj_t * ui_Label_dummy5;
-extern lv_obj_t * ui_Panel2;
-extern lv_obj_t * ui_Button4;
-extern lv_obj_t * ui_Label5;
+extern lv_obj_t * ui_Panel_room_info;
+void ui_event_Button_creat_room(lv_event_t * e);
+extern lv_obj_t * ui_Button_creat_room;
+extern lv_obj_t * ui_Label_dummy_1;
 extern lv_obj_t * ui_Button5;
 extern lv_obj_t * ui_Label6;
 // SCREEN: ui_Screen_room
@@ -82,7 +85,8 @@ extern lv_obj_t * ui_Label1;
 extern lv_obj_t * ui_Panel1;
 extern lv_obj_t * ui_Button1;
 extern lv_obj_t * ui_Label2;
-extern lv_obj_t * ui_Button2;
+void ui_event_Button_exit_room(lv_event_t * e);
+extern lv_obj_t * ui_Button_exit_room;
 extern lv_obj_t * ui_Label4;
 // SCREEN: ui_Screen_match
 void ui_Screen_match_screen_init(void);

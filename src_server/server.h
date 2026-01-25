@@ -18,11 +18,12 @@ typedef struct {
     char username[32];
     int is_authenticated;
     int room_id;
-    int side;
+    int side; // 1:红, 2:黑
 } Player;
 
 typedef struct {
     int room_id;
+    int is_active;    // 标记位：0空闲，1占用
     int red_fd;
     int black_fd;
     int is_full;
@@ -34,13 +35,16 @@ typedef struct {
     time_t game_start_time;
 } ChessRoom;
 
+// 全局变量声明
 extern int client_fds[MAX_CLIENTS];
 extern Player players[MAX_CLIENTS];
 extern ChessRoom rooms[MAX_ROOMS];
 
-// 核心修复：函数原型现在包含 type
+// 函数声明
 void send_json_response(int fd, int type, const char* status, const char* msg);
 void handle_register(int fd, cJSON *root);
 void handle_login(int fd, cJSON *root, Player *p);
+void handle_create_room(int fd, cJSON *root, Player *p);
+void handle_leave_room(int fd, Player *p); 
 
 #endif

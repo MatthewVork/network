@@ -127,6 +127,22 @@ int main(int argc, char **argv) {
                 }
             }
 
+            else if (g_player.msg_type == 5) 
+            {   // 收到创建房间的回包
+                if (strcmp((char*)g_player.status, "success") == 0) 
+                {
+                    printf("创建成功，进入房间: %d\n", g_player.room_id);
+                    // 关键：在这里执行跳转到房间界面
+                    // 假设 ui.h 中定义的房间初始化函数是 ui_Screen_room_screen_init
+                    _ui_screen_change(&ui_Screen_room, LV_SCR_LOAD_ANIM_FADE_ON, 500, 0, &ui_Screen_room_screen_init);
+                } 
+                else 
+                {
+                    // 可以在 UI 上弹出一个失败提示
+                    printf("创建房间失败\n");
+                }
+            }
+
             g_player.has_update = 0; 
         }
         lv_timer_handler(); 

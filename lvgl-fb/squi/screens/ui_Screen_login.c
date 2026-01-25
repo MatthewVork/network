@@ -98,6 +98,7 @@ void ui_Screen_login_screen_init(void)
     lv_obj_set_width(ui_Container_login_success, 800);
     lv_obj_set_height(ui_Container_login_success, 480);
     lv_obj_set_align(ui_Container_login_success, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Container_login_success, LV_OBJ_FLAG_HIDDEN);     /// Flags
     lv_obj_clear_flag(ui_Container_login_success, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_color(ui_Container_login_success, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_Container_login_success, 128, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -112,7 +113,7 @@ void ui_Screen_login_screen_init(void)
     lv_obj_set_width(ui_Label_login_success, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Label_login_success, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_align(ui_Label_login_success, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label_login_success, "登录成功，正在进入系统...");
+    lv_label_set_text(ui_Label_login_success, "登录成功，正在进入系统...3");
     lv_obj_set_style_text_font(ui_Label_login_success, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Container_login_fail = lv_obj_create(ui_Screen_login);

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb
+CMAKE_SOURCE_DIR = /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/build-pc
+CMAKE_BINARY_DIR = /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/build-pc
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/build-pc/CMakeFiles /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/build-pc//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/build-pc/CMakeFiles /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/build-pc//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/build-pc/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/build-pc/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -4833,6 +4833,30 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/main.c.s
 .PHONY : main.c.s
 
+squi/components/ui_comp.o: squi/components/ui_comp.c.o
+.PHONY : squi/components/ui_comp.o
+
+# target to build an object file
+squi/components/ui_comp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/components/ui_comp.c.o
+.PHONY : squi/components/ui_comp.c.o
+
+squi/components/ui_comp.i: squi/components/ui_comp.c.i
+.PHONY : squi/components/ui_comp.i
+
+# target to preprocess a source file
+squi/components/ui_comp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/components/ui_comp.c.i
+.PHONY : squi/components/ui_comp.c.i
+
+squi/components/ui_comp.s: squi/components/ui_comp.c.s
+.PHONY : squi/components/ui_comp.s
+
+# target to generate assembly for a file
+squi/components/ui_comp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/components/ui_comp.c.s
+.PHONY : squi/components/ui_comp.c.s
+
 squi/components/ui_comp_hook.o: squi/components/ui_comp_hook.c.o
 .PHONY : squi/components/ui_comp_hook.o
 
@@ -4856,6 +4880,30 @@ squi/components/ui_comp_hook.s: squi/components/ui_comp_hook.c.s
 squi/components/ui_comp_hook.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/components/ui_comp_hook.c.s
 .PHONY : squi/components/ui_comp_hook.c.s
+
+squi/components/ui_comp_panelroomcomponent.o: squi/components/ui_comp_panelroomcomponent.c.o
+.PHONY : squi/components/ui_comp_panelroomcomponent.o
+
+# target to build an object file
+squi/components/ui_comp_panelroomcomponent.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/components/ui_comp_panelroomcomponent.c.o
+.PHONY : squi/components/ui_comp_panelroomcomponent.c.o
+
+squi/components/ui_comp_panelroomcomponent.i: squi/components/ui_comp_panelroomcomponent.c.i
+.PHONY : squi/components/ui_comp_panelroomcomponent.i
+
+# target to preprocess a source file
+squi/components/ui_comp_panelroomcomponent.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/components/ui_comp_panelroomcomponent.c.i
+.PHONY : squi/components/ui_comp_panelroomcomponent.c.i
+
+squi/components/ui_comp_panelroomcomponent.s: squi/components/ui_comp_panelroomcomponent.c.s
+.PHONY : squi/components/ui_comp_panelroomcomponent.s
+
+# target to generate assembly for a file
+squi/components/ui_comp_panelroomcomponent.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess_app.dir/build.make CMakeFiles/chess_app.dir/squi/components/ui_comp_panelroomcomponent.c.s
+.PHONY : squi/components/ui_comp_panelroomcomponent.c.s
 
 squi/fonts/ui_font_Black.o: squi/fonts/ui_font_Black.c.o
 .PHONY : squi/fonts/ui_font_Black.o
@@ -6078,9 +6126,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... squi/components/ui_comp.o"
+	@echo "... squi/components/ui_comp.i"
+	@echo "... squi/components/ui_comp.s"
 	@echo "... squi/components/ui_comp_hook.o"
 	@echo "... squi/components/ui_comp_hook.i"
 	@echo "... squi/components/ui_comp_hook.s"
+	@echo "... squi/components/ui_comp_panelroomcomponent.o"
+	@echo "... squi/components/ui_comp_panelroomcomponent.i"
+	@echo "... squi/components/ui_comp_panelroomcomponent.s"
 	@echo "... squi/fonts/ui_font_Black.o"
 	@echo "... squi/fonts/ui_font_Black.i"
 	@echo "... squi/fonts/ui_font_Black.s"

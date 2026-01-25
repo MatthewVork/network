@@ -1,8 +1,8 @@
 CMakeFiles/chess_app.dir/lvgl/src/misc/lv_utils.c.o: \
- /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/lvgl/src/misc/lv_utils.c \
+ /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/lvgl/src/misc/lv_utils.c \
  /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
- /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/lvgl/src/misc/lv_utils.h \
+ /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/lvgl/src/misc/lv_utils.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \

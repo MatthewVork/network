@@ -1,4 +1,6 @@
-SET(SOURCES screens/ui_Screen_login.c
+SET(SOURCES components/ui_comp_panelroomcomponent.c
+    components/ui_comp.c
+    screens/ui_Screen_login.c
     screens/ui_Screen_register.c
     screens/ui_Screen_main_menu.c
     screens/ui_Screen_room.c

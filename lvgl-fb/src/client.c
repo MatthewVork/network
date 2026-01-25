@@ -12,7 +12,7 @@ void init_network()
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(8888);
     // 使用你定义的地址
-    inet_pton(AF_INET, "172.28.17.136", &serv_addr.sin_addr);
+    inet_pton(AF_INET, "172.24.139.145", &serv_addr.sin_addr);
 
     printf("正在尝试接入服务器...\n");
 

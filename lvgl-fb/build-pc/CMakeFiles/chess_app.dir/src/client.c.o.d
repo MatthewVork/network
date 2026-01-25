@@ -1,7 +1,7 @@
 CMakeFiles/chess_app.dir/src/client.c.o: \
- /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/src/client.c \
+ /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/src/client.c \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/src/client.h \
+ /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/src/client.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -82,4 +82,4 @@ CMakeFiles/chess_app.dir/src/client.c.o: \
  /usr/include/x86_64-linux-gnu/bits/time.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
- /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/src/cJSON.h
+ /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/src/cJSON.h
