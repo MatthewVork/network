@@ -16,7 +16,7 @@ void init_network() {
     serv_addr.sin_port = htons(8888);
     
     // 【核心修改】先尝试本地回路
-    if (inet_pton(AF_INET, "172.28.17.136", &serv_addr.sin_addr) <= 0) {
+    if (inet_pton(AF_INET, "172.24.139.145", &serv_addr.sin_addr) <= 0) {
         perror("Invalid address");
         return;
     }

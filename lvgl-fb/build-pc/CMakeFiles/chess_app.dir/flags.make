@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DLV_CONF_INCLUDE_SIMPLE -DLV_LVGL_H_INCLUDE_SIMPLE -DUSE_SDL
 
-C_INCLUDES = -I/mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb -I/mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/lvgl -I/mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/lv_drivers -I/mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/squi -I/mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/src -isystem /usr/include/SDL2
+C_INCLUDES = -I/mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb -I/mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/lvgl -I/mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/lv_drivers -I/mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/squi -I/mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/src -isystem /usr/include/SDL2
 
 C_FLAGS = -std=gnu11
 
