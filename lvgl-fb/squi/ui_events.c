@@ -141,3 +141,15 @@ void Join_Room_Handler(lv_event_t * e)
     cJSON_Delete(root);
     printf("[CLIENT] 正在申请加入房间: %d\n", target_id);
 }
+
+void Ready_Handler(lv_event_t * e) {
+    cJSON *root = cJSON_CreateObject();
+    cJSON_AddNumberToObject(root, "type", 11); // 11: 准备状态切换
+    cJSON_AddStringToObject(root, "user", (char*)g_player.username);
+    cJSON_AddNumberToObject(root, "room_id", g_player.room_id);
+
+    char *out = cJSON_PrintUnformatted(root);
+    send(client_fd, out, strlen(out), 0);
+    cJSON_free(out);
+    cJSON_Delete(root);
+}

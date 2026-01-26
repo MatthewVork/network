@@ -30,3 +30,7 @@ def event_button_logout(event_struct):
 def Join_Room_Handler(event_struct):
     return
 
+
+def Ready_Handler(event_struct):
+    return
+

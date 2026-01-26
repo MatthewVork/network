@@ -96,13 +96,20 @@ lv_obj_t * ui_Keyboard_roomnum;
 void ui_Screen_room_screen_init(void);
 lv_obj_t * ui_Screen_room;
 lv_obj_t * ui_Container_screen_main_menu1;
-lv_obj_t * ui_Label1;
-lv_obj_t * ui_Panel1;
-lv_obj_t * ui_Button1;
-lv_obj_t * ui_Label2;
+lv_obj_t * ui_Label_roomnum;
+lv_obj_t * ui_Panel_player_info;
+lv_obj_t * ui_Label_player_red;
+lv_obj_t * ui_Label_player_black;
+void ui_event_Button_ready(lv_event_t * e);
+lv_obj_t * ui_Button_ready;
+lv_obj_t * ui_Label_dummy_7;
 void ui_event_Button_exit_room(lv_event_t * e);
 lv_obj_t * ui_Button_exit_room;
+lv_obj_t * ui_Label_dummy_8;
+lv_obj_t * ui_Label2;
 lv_obj_t * ui_Label4;
+lv_obj_t * ui_Label_red_ready_info;
+lv_obj_t * ui_Label_black_ready_info;
 
 
 // SCREEN: ui_Screen_match
@@ -301,6 +308,14 @@ void ui_event_Button_cancel_input_roomnum(lv_event_t * e)
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_CLICKED) {
         _ui_flag_modify(ui_Panel__to_input_roomnum, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+    }
+}
+void ui_event_Button_ready(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        Ready_Handler(e);
     }
 }
 void ui_event_Button_exit_room(lv_event_t * e)

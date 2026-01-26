@@ -17,34 +17,52 @@ void ui_Screen_room_screen_init(void)
     lv_obj_set_align(ui_Container_screen_main_menu1, LV_ALIGN_CENTER);
     lv_obj_clear_flag(ui_Container_screen_main_menu1, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
-    ui_Label1 = lv_label_create(ui_Container_screen_main_menu1);
-    lv_obj_set_width(ui_Label1, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label1, LV_SIZE_CONTENT);    /// 1
-    lv_label_set_text(ui_Label1, "当前在线人数：%	房间数：%	");
-    lv_obj_set_style_text_font(ui_Label1, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_Label_roomnum = lv_label_create(ui_Container_screen_main_menu1);
+    lv_obj_set_width(ui_Label_roomnum, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label_roomnum, LV_SIZE_CONTENT);    /// 1
+    lv_label_set_text(ui_Label_roomnum, "当前在线人数：%	房间数：%	");
+    lv_obj_set_style_text_font(ui_Label_roomnum, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Panel1 = lv_obj_create(ui_Screen_room);
-    lv_obj_set_width(ui_Panel1, 500);
-    lv_obj_set_height(ui_Panel1, 400);
-    lv_obj_set_x(ui_Panel1, 20);
-    lv_obj_set_y(ui_Panel1, 20);
-    lv_obj_clear_flag(ui_Panel1, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    ui_Panel_player_info = lv_obj_create(ui_Screen_room);
+    lv_obj_set_width(ui_Panel_player_info, 500);
+    lv_obj_set_height(ui_Panel_player_info, 400);
+    lv_obj_set_x(ui_Panel_player_info, 20);
+    lv_obj_set_y(ui_Panel_player_info, 20);
+    lv_obj_clear_flag(ui_Panel_player_info, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
-    ui_Button1 = lv_btn_create(ui_Screen_room);
-    lv_obj_set_width(ui_Button1, 160);
-    lv_obj_set_height(ui_Button1, 50);
-    lv_obj_set_x(ui_Button1, 0);
-    lv_obj_set_y(ui_Button1, -50);
-    lv_obj_set_align(ui_Button1, LV_ALIGN_RIGHT_MID);
-    lv_obj_add_flag(ui_Button1, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_Button1, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    ui_Label_player_red = lv_label_create(ui_Panel_player_info);
+    lv_obj_set_width(ui_Label_player_red, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label_player_red, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label_player_red, -85);
+    lv_obj_set_y(ui_Label_player_red, -157);
+    lv_obj_set_align(ui_Label_player_red, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label_player_red, "playername");
+    lv_obj_set_style_text_font(ui_Label_player_red, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Label2 = lv_label_create(ui_Button1);
-    lv_obj_set_width(ui_Label2, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label2, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_align(ui_Label2, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label2, "准备");
-    lv_obj_set_style_text_font(ui_Label2, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_Label_player_black = lv_label_create(ui_Panel_player_info);
+    lv_obj_set_width(ui_Label_player_black, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label_player_black, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label_player_black, -85);
+    lv_obj_set_y(ui_Label_player_black, -113);
+    lv_obj_set_align(ui_Label_player_black, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label_player_black, "playername");
+    lv_obj_set_style_text_font(ui_Label_player_black, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Button_ready = lv_btn_create(ui_Screen_room);
+    lv_obj_set_width(ui_Button_ready, 160);
+    lv_obj_set_height(ui_Button_ready, 50);
+    lv_obj_set_x(ui_Button_ready, 0);
+    lv_obj_set_y(ui_Button_ready, -50);
+    lv_obj_set_align(ui_Button_ready, LV_ALIGN_RIGHT_MID);
+    lv_obj_add_flag(ui_Button_ready, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_Button_ready, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
+    ui_Label_dummy_7 = lv_label_create(ui_Button_ready);
+    lv_obj_set_width(ui_Label_dummy_7, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label_dummy_7, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_Label_dummy_7, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label_dummy_7, "准备");
+    lv_obj_set_style_text_font(ui_Label_dummy_7, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Button_exit_room = lv_btn_create(ui_Screen_room);
     lv_obj_set_width(ui_Button_exit_room, 160);
@@ -55,15 +73,52 @@ void ui_Screen_room_screen_init(void)
     lv_obj_add_flag(ui_Button_exit_room, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_Button_exit_room, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
-    ui_Label4 = lv_label_create(ui_Button_exit_room);
+    ui_Label_dummy_8 = lv_label_create(ui_Button_exit_room);
+    lv_obj_set_width(ui_Label_dummy_8, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label_dummy_8, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label_dummy_8, 0);
+    lv_obj_set_y(ui_Label_dummy_8, 1);
+    lv_obj_set_align(ui_Label_dummy_8, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label_dummy_8, "退出房间");
+    lv_obj_set_style_text_font(ui_Label_dummy_8, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Label2 = lv_label_create(ui_Screen_room);
+    lv_obj_set_width(ui_Label2, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label2, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label2, -317);
+    lv_obj_set_y(ui_Label2, -176);
+    lv_obj_set_align(ui_Label2, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label2, "红方ID");
+    lv_obj_set_style_text_font(ui_Label2, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Label4 = lv_label_create(ui_Screen_room);
     lv_obj_set_width(ui_Label4, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Label4, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label4, 0);
-    lv_obj_set_y(ui_Label4, 1);
+    lv_obj_set_x(ui_Label4, -320);
+    lv_obj_set_y(ui_Label4, -133);
     lv_obj_set_align(ui_Label4, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label4, "退出房间");
+    lv_label_set_text(ui_Label4, "黑方ID");
     lv_obj_set_style_text_font(ui_Label4, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+    ui_Label_red_ready_info = lv_label_create(ui_Screen_room);
+    lv_obj_set_width(ui_Label_red_ready_info, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label_red_ready_info, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label_red_ready_info, -110);
+    lv_obj_set_y(ui_Label_red_ready_info, -178);
+    lv_obj_set_align(ui_Label_red_ready_info, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label_red_ready_info, "已准备");
+    lv_obj_set_style_text_font(ui_Label_red_ready_info, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Label_black_ready_info = lv_label_create(ui_Screen_room);
+    lv_obj_set_width(ui_Label_black_ready_info, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label_black_ready_info, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label_black_ready_info, -110);
+    lv_obj_set_y(ui_Label_black_ready_info, -132);
+    lv_obj_set_align(ui_Label_black_ready_info, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label_black_ready_info, "未准备");
+    lv_obj_set_style_text_font(ui_Label_black_ready_info, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    lv_obj_add_event_cb(ui_Button_ready, ui_event_Button_ready, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button_exit_room, ui_event_Button_exit_room, LV_EVENT_ALL, NULL);
 
 }

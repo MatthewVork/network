@@ -40,11 +40,14 @@ extern int client_fds[MAX_CLIENTS];
 extern Player players[MAX_CLIENTS];
 extern ChessRoom rooms[MAX_ROOMS];
 
-// 函数声明
+// 函数声明 - 严格检查末尾分号
 void send_json_response(int fd, int type, const char* status, const char* msg);
 void handle_register(int fd, cJSON *root);
 void handle_login(int fd, cJSON *root, Player *p);
 void handle_create_room(int fd, cJSON *root, Player *p);
-void handle_leave_room(int fd, Player *p); 
+void handle_join_room(int fd, cJSON *root, Player *p);
+void handle_leave_room(int fd, cJSON *root, Player *p); 
+void handle_ready_toggle(int fd, cJSON *root, Player *p);
+void handle_cleanup(int fd, Player *p);
 
 #endif
