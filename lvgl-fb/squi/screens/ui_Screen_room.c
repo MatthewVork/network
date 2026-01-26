@@ -23,12 +23,40 @@ void ui_Screen_room_screen_init(void)
     lv_label_set_text(ui_Label1, "当前在线人数：%	房间数：%	");
     lv_obj_set_style_text_font(ui_Label1, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Panel1 = lv_obj_create(ui_Screen_room);
-    lv_obj_set_width(ui_Panel1, 500);
-    lv_obj_set_height(ui_Panel1, 400);
-    lv_obj_set_x(ui_Panel1, 20);
-    lv_obj_set_y(ui_Panel1, 20);
-    lv_obj_clear_flag(ui_Panel1, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    ui_Panel_player_info = lv_obj_create(ui_Screen_room);
+    lv_obj_set_width(ui_Panel_player_info, 500);
+    lv_obj_set_height(ui_Panel_player_info, 400);
+    lv_obj_set_x(ui_Panel_player_info, 20);
+    lv_obj_set_y(ui_Panel_player_info, 20);
+    lv_obj_clear_flag(ui_Panel_player_info, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
+    ui_Label_red_player_username = lv_label_create(ui_Panel_player_info);
+    lv_obj_set_width(ui_Label_red_player_username, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label_red_player_username, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label_red_player_username, -170);
+    lv_obj_set_y(ui_Label_red_player_username, -111);
+    lv_obj_set_align(ui_Label_red_player_username, LV_ALIGN_CENTER);
+
+    ui_Label_black_player_username = lv_label_create(ui_Panel_player_info);
+    lv_obj_set_width(ui_Label_black_player_username, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label_black_player_username, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label_black_player_username, -169);
+    lv_obj_set_y(ui_Label_black_player_username, -46);
+    lv_obj_set_align(ui_Label_black_player_username, LV_ALIGN_CENTER);
+
+    ui_Label_black_player_ready_info = lv_label_create(ui_Panel_player_info);
+    lv_obj_set_width(ui_Label_black_player_ready_info, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label_black_player_ready_info, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label_black_player_ready_info, 106);
+    lv_obj_set_y(ui_Label_black_player_ready_info, -49);
+    lv_obj_set_align(ui_Label_black_player_ready_info, LV_ALIGN_CENTER);
+
+    ui_Label_red_player_ready_info = lv_label_create(ui_Panel_player_info);
+    lv_obj_set_width(ui_Label_red_player_ready_info, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label_red_player_ready_info, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label_red_player_ready_info, 113);
+    lv_obj_set_y(ui_Label_red_player_ready_info, -112);
+    lv_obj_set_align(ui_Label_red_player_ready_info, LV_ALIGN_CENTER);
 
     ui_Button1 = lv_btn_create(ui_Screen_room);
     lv_obj_set_width(ui_Button1, 160);
@@ -64,6 +92,7 @@ void ui_Screen_room_screen_init(void)
     lv_label_set_text(ui_Label4, "退出房间");
     lv_obj_set_style_text_font(ui_Label4, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+    lv_obj_add_event_cb(ui_Button1, ui_event_Button1, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button_exit_room, ui_event_Button_exit_room, LV_EVENT_ALL, NULL);
 
 }

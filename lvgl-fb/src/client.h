@@ -9,6 +9,8 @@
 #include <sys/select.h>
 #include <time.h>
 #include "cJSON.h"
+#include "lvgl.h"
+#include "ui_events.h"
 
 // --- 定义全局结构体 ---
 typedef struct {

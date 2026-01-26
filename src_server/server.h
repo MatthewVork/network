@@ -45,6 +45,9 @@ void send_json_response(int fd, int type, const char* status, const char* msg);
 void handle_register(int fd, cJSON *root);
 void handle_login(int fd, cJSON *root, Player *p);
 void handle_create_room(int fd, cJSON *root, Player *p);
-void handle_leave_room(int fd, Player *p); 
+// 【修复：补全参数和声明】
+void handle_join_room(int fd, cJSON *root, Player *p);
+void handle_leave_room(int fd, cJSON *root, Player *p); 
+void handle_ready(int fd, cJSON *root, Player *p);
 
 #endif

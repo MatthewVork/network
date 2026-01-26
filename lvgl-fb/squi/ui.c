@@ -97,7 +97,12 @@ void ui_Screen_room_screen_init(void);
 lv_obj_t * ui_Screen_room;
 lv_obj_t * ui_Container_screen_main_menu1;
 lv_obj_t * ui_Label1;
-lv_obj_t * ui_Panel1;
+lv_obj_t * ui_Panel_player_info;
+lv_obj_t * ui_Label_red_player_username;
+lv_obj_t * ui_Label_black_player_username;
+lv_obj_t * ui_Label_black_player_ready_info;
+lv_obj_t * ui_Label_red_player_ready_info;
+void ui_event_Button1(lv_event_t * e);
 lv_obj_t * ui_Button1;
 lv_obj_t * ui_Label2;
 void ui_event_Button_exit_room(lv_event_t * e);
@@ -175,7 +180,7 @@ void ui_event_Username_login(lv_event_t * e)
         _ui_keyboard_set_target(ui_Keyboard_login,  ui_Username_login);
     }
     if(event_code == LV_EVENT_DEFOCUSED) {
-        _ui_flag_modify(ui_Keyboard_login, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+        Delay_Hide_Keyboard(e);
     }
 }
 void ui_event_Password_login(lv_event_t * e)
@@ -187,7 +192,7 @@ void ui_event_Password_login(lv_event_t * e)
         _ui_keyboard_set_target(ui_Keyboard_login,  ui_Password_login);
     }
     if(event_code == LV_EVENT_DEFOCUSED) {
-        _ui_flag_modify(ui_Keyboard_login, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+        Delay_Hide_Keyboard(e);
     }
 }
 void ui_event_Button_login(lv_event_t * e)
@@ -223,7 +228,7 @@ void ui_event_Username_register(lv_event_t * e)
         _ui_keyboard_set_target(ui_Keyboard_register,  ui_Username_register);
     }
     if(event_code == LV_EVENT_DEFOCUSED) {
-        _ui_flag_modify(ui_Keyboard_register, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+        Delay_Hide_Keyboard(e);
     }
 }
 void ui_event_Password_register(lv_event_t * e)
@@ -235,7 +240,7 @@ void ui_event_Password_register(lv_event_t * e)
         _ui_keyboard_set_target(ui_Keyboard_register,  ui_Password_register);
     }
     if(event_code == LV_EVENT_DEFOCUSED) {
-        _ui_flag_modify(ui_Keyboard_register, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+        Delay_Hide_Keyboard(e);
     }
 }
 void ui_event_Button_register(lv_event_t * e)
@@ -301,6 +306,14 @@ void ui_event_Button_cancel_input_roomnum(lv_event_t * e)
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_CLICKED) {
         _ui_flag_modify(ui_Panel__to_input_roomnum, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+    }
+}
+void ui_event_Button1(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        Ready_Handler(e);
     }
 }
 void ui_event_Button_exit_room(lv_event_t * e)
