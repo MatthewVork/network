@@ -20,10 +20,13 @@ void ui_Screen_main_menu_screen_init(void)
     ui_Label3 = lv_label_create(ui_Container_screen_main_menu);
     lv_obj_set_width(ui_Label3, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Label3, LV_SIZE_CONTENT);    /// 1
-    lv_label_set_text(ui_Label3, "当前在线人数：%	房间数：%	");
+    lv_obj_set_x(ui_Label3, 0);
+    lv_obj_set_y(ui_Label3, -80);
+    lv_obj_set_align(ui_Label3, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label3, "欢迎来到对战系统！");
     lv_obj_set_style_text_font(ui_Label3, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Button_back_login_screen2 = lv_btn_create(ui_Screen_main_menu);
+    ui_Button_back_login_screen2 = lv_btn_create(ui_Container_screen_main_menu);
     lv_obj_set_width(ui_Button_back_login_screen2, 60);
     lv_obj_set_height(ui_Button_back_login_screen2, 40);
     lv_obj_set_x(ui_Button_back_login_screen2, -10);
@@ -39,20 +42,10 @@ void ui_Screen_main_menu_screen_init(void)
     lv_label_set_text(ui_Label_dummy5, "返回");
     lv_obj_set_style_text_font(ui_Label_dummy5, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Panel_room_info = lv_obj_create(ui_Screen_main_menu);
-    lv_obj_set_width(ui_Panel_room_info, 540);
-    lv_obj_set_height(ui_Panel_room_info, 400);
-    lv_obj_set_x(ui_Panel_room_info, 20);
-    lv_obj_set_y(ui_Panel_room_info, 20);
-    lv_obj_clear_flag(ui_Panel_room_info,
-                      LV_OBJ_FLAG_SCROLL_ELASTIC | LV_OBJ_FLAG_SCROLL_MOMENTUM | LV_OBJ_FLAG_SCROLL_CHAIN);     /// Flags
-
-    ui_Button_creat_room = lv_btn_create(ui_Screen_main_menu);
+    ui_Button_creat_room = lv_btn_create(ui_Container_screen_main_menu);
     lv_obj_set_width(ui_Button_creat_room, 160);
     lv_obj_set_height(ui_Button_creat_room, 50);
-    lv_obj_set_x(ui_Button_creat_room, 0);
-    lv_obj_set_y(ui_Button_creat_room, -50);
-    lv_obj_set_align(ui_Button_creat_room, LV_ALIGN_RIGHT_MID);
+    lv_obj_set_align(ui_Button_creat_room, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_Button_creat_room, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_Button_creat_room, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
@@ -63,25 +56,121 @@ void ui_Screen_main_menu_screen_init(void)
     lv_label_set_text(ui_Label_dummy_1, "创建房间");
     lv_obj_set_style_text_font(ui_Label_dummy_1, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Button5 = lv_btn_create(ui_Screen_main_menu);
-    lv_obj_set_width(ui_Button5, 160);
-    lv_obj_set_height(ui_Button5, 50);
-    lv_obj_set_x(ui_Button5, 0);
-    lv_obj_set_y(ui_Button5, 59);
-    lv_obj_set_align(ui_Button5, LV_ALIGN_RIGHT_MID);
-    lv_obj_add_flag(ui_Button5, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_Button5, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    ui_Button_gotoroom = lv_btn_create(ui_Screen_main_menu);
+    lv_obj_set_width(ui_Button_gotoroom, 160);
+    lv_obj_set_height(ui_Button_gotoroom, 50);
+    lv_obj_set_x(ui_Button_gotoroom, 0);
+    lv_obj_set_y(ui_Button_gotoroom, 60);
+    lv_obj_set_align(ui_Button_gotoroom, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Button_gotoroom, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_Button_gotoroom, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
-    ui_Label6 = lv_label_create(ui_Button5);
-    lv_obj_set_width(ui_Label6, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label6, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label6, 0);
-    lv_obj_set_y(ui_Label6, 1);
-    lv_obj_set_align(ui_Label6, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label6, "加入房间");
-    lv_obj_set_style_text_font(ui_Label6, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_Label_dummy_2 = lv_label_create(ui_Button_gotoroom);
+    lv_obj_set_width(ui_Label_dummy_2, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label_dummy_2, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label_dummy_2, 0);
+    lv_obj_set_y(ui_Label_dummy_2, 1);
+    lv_obj_set_align(ui_Label_dummy_2, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label_dummy_2, "加入房间");
+    lv_obj_set_style_text_font(ui_Label_dummy_2, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Button_random_matching = lv_btn_create(ui_Screen_main_menu);
+    lv_obj_set_width(ui_Button_random_matching, 160);
+    lv_obj_set_height(ui_Button_random_matching, 50);
+    lv_obj_set_x(ui_Button_random_matching, 0);
+    lv_obj_set_y(ui_Button_random_matching, 120);
+    lv_obj_set_align(ui_Button_random_matching, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Button_random_matching, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_Button_random_matching, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
+    ui_Label_dummy_3 = lv_label_create(ui_Button_random_matching);
+    lv_obj_set_width(ui_Label_dummy_3, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label_dummy_3, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label_dummy_3, 0);
+    lv_obj_set_y(ui_Label_dummy_3, 1);
+    lv_obj_set_align(ui_Label_dummy_3, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label_dummy_3, "随机匹配");
+    lv_obj_set_style_text_font(ui_Label_dummy_3, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Panel__to_input_roomnum = lv_obj_create(ui_Screen_main_menu);
+    lv_obj_set_width(ui_Panel__to_input_roomnum, 800);
+    lv_obj_set_height(ui_Panel__to_input_roomnum, 480);
+    lv_obj_set_x(ui_Panel__to_input_roomnum, 0);
+    lv_obj_set_y(ui_Panel__to_input_roomnum, -1);
+    lv_obj_set_align(ui_Panel__to_input_roomnum, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Panel__to_input_roomnum, LV_OBJ_FLAG_HIDDEN);     /// Flags
+    lv_obj_clear_flag(ui_Panel__to_input_roomnum, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_Panel__to_input_roomnum, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_Panel__to_input_roomnum, 128, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Panel_input_roomnum = lv_obj_create(ui_Panel__to_input_roomnum);
+    lv_obj_set_width(ui_Panel_input_roomnum, 300);
+    lv_obj_set_height(ui_Panel_input_roomnum, 200);
+    lv_obj_set_align(ui_Panel_input_roomnum, LV_ALIGN_CENTER);
+    lv_obj_clear_flag(ui_Panel_input_roomnum, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
+    ui_TextArea_roomnum = lv_textarea_create(ui_Panel_input_roomnum);
+    lv_obj_set_width(ui_TextArea_roomnum, 150);
+    lv_obj_set_height(ui_TextArea_roomnum, LV_SIZE_CONTENT);    /// 70
+    lv_obj_set_align(ui_TextArea_roomnum, LV_ALIGN_CENTER);
+    if("0123456789" == "") lv_textarea_set_accepted_chars(ui_TextArea_roomnum, NULL);
+    else lv_textarea_set_accepted_chars(ui_TextArea_roomnum, "0123456789");
+    lv_textarea_set_max_length(ui_TextArea_roomnum, 8);
+    lv_textarea_set_one_line(ui_TextArea_roomnum, true);
+
+
+
+    ui_Button2 = lv_btn_create(ui_Panel_input_roomnum);
+    lv_obj_set_width(ui_Button2, 60);
+    lv_obj_set_height(ui_Button2, 40);
+    lv_obj_set_x(ui_Button2, -35);
+    lv_obj_set_y(ui_Button2, 50);
+    lv_obj_set_align(ui_Button2, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Button2, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_Button2, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
+    ui_Label_dummy_6 = lv_label_create(ui_Button2);
+    lv_obj_set_width(ui_Label_dummy_6, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label_dummy_6, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_Label_dummy_6, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label_dummy_6, "确认");
+    lv_obj_set_style_text_font(ui_Label_dummy_6, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Button_cancel_input_roomnum = lv_btn_create(ui_Panel_input_roomnum);
+    lv_obj_set_width(ui_Button_cancel_input_roomnum, 60);
+    lv_obj_set_height(ui_Button_cancel_input_roomnum, 40);
+    lv_obj_set_x(ui_Button_cancel_input_roomnum, 35);
+    lv_obj_set_y(ui_Button_cancel_input_roomnum, 50);
+    lv_obj_set_align(ui_Button_cancel_input_roomnum, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Button_cancel_input_roomnum, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_Button_cancel_input_roomnum, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
+    ui_Label_dummy_5 = lv_label_create(ui_Button_cancel_input_roomnum);
+    lv_obj_set_width(ui_Label_dummy_5, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label_dummy_5, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_Label_dummy_5, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label_dummy_5, "取消");
+    lv_obj_set_style_text_font(ui_Label_dummy_5, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Label_dummy_4 = lv_label_create(ui_Panel__to_input_roomnum);
+    lv_obj_set_width(ui_Label_dummy_4, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label_dummy_4, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label_dummy_4, 0);
+    lv_obj_set_y(ui_Label_dummy_4, -50);
+    lv_obj_set_align(ui_Label_dummy_4, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label_dummy_4, "请输入房间号");
+    lv_obj_set_style_text_font(ui_Label_dummy_4, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Keyboard_roomnum = lv_keyboard_create(ui_Panel__to_input_roomnum);
+    lv_obj_set_width(ui_Keyboard_roomnum, 300);
+    lv_obj_set_height(ui_Keyboard_roomnum, 120);
+    lv_obj_set_align(ui_Keyboard_roomnum, LV_ALIGN_BOTTOM_MID);
 
     lv_obj_add_event_cb(ui_Button_back_login_screen2, ui_event_Button_back_login_screen2, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button_creat_room, ui_event_Button_creat_room, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_Button_gotoroom, ui_event_Button_gotoroom, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_TextArea_roomnum, ui_event_TextArea_roomnum, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_Button2, ui_event_Button2, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_Button_cancel_input_roomnum, ui_event_Button_cancel_input_roomnum, LV_EVENT_ALL, NULL);
 
 }

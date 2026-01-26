@@ -32,6 +32,9 @@ lv_obj_t * ui_Label_login_success;
 lv_obj_t * ui_Container_login_fail;
 lv_obj_t * ui_Panel_login_fail;
 lv_obj_t * ui_Label_login_fail;
+lv_obj_t * ui_Container_login_repeat;
+lv_obj_t * ui_Panel_login_repeat;
+lv_obj_t * ui_Label_login_repeat;
 
 
 // SCREEN: ui_Screen_register
@@ -67,12 +70,26 @@ lv_obj_t * ui_Label3;
 void ui_event_Button_back_login_screen2(lv_event_t * e);
 lv_obj_t * ui_Button_back_login_screen2;
 lv_obj_t * ui_Label_dummy5;
-lv_obj_t * ui_Panel_room_info;
 void ui_event_Button_creat_room(lv_event_t * e);
 lv_obj_t * ui_Button_creat_room;
 lv_obj_t * ui_Label_dummy_1;
-lv_obj_t * ui_Button5;
-lv_obj_t * ui_Label6;
+void ui_event_Button_gotoroom(lv_event_t * e);
+lv_obj_t * ui_Button_gotoroom;
+lv_obj_t * ui_Label_dummy_2;
+lv_obj_t * ui_Button_random_matching;
+lv_obj_t * ui_Label_dummy_3;
+lv_obj_t * ui_Panel__to_input_roomnum;
+lv_obj_t * ui_Panel_input_roomnum;
+void ui_event_TextArea_roomnum(lv_event_t * e);
+lv_obj_t * ui_TextArea_roomnum;
+void ui_event_Button2(lv_event_t * e);
+lv_obj_t * ui_Button2;
+lv_obj_t * ui_Label_dummy_6;
+void ui_event_Button_cancel_input_roomnum(lv_event_t * e);
+lv_obj_t * ui_Button_cancel_input_roomnum;
+lv_obj_t * ui_Label_dummy_5;
+lv_obj_t * ui_Label_dummy_4;
+lv_obj_t * ui_Keyboard_roomnum;
 
 
 // SCREEN: ui_Screen_room
@@ -243,6 +260,7 @@ void ui_event_Button_back_login_screen2(lv_event_t * e)
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_CLICKED) {
         _ui_screen_change(&ui_Screen_login, LV_SCR_LOAD_ANIM_FADE_ON, 500, 0, &ui_Screen_login_screen_init);
+        event_button_logout(e);
     }
 }
 void ui_event_Button_creat_room(lv_event_t * e)
@@ -251,6 +269,38 @@ void ui_event_Button_creat_room(lv_event_t * e)
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_CLICKED) {
         Create_Room_Handler(e);
+    }
+}
+void ui_event_Button_gotoroom(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        _ui_flag_modify(ui_Panel__to_input_roomnum, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
+    }
+}
+void ui_event_TextArea_roomnum(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_FOCUSED) {
+        _ui_keyboard_set_target(ui_Keyboard_roomnum,  ui_TextArea_roomnum);
+    }
+}
+void ui_event_Button2(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        Join_Room_Handler(e);
+    }
+}
+void ui_event_Button_cancel_input_roomnum(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        _ui_flag_modify(ui_Panel__to_input_roomnum, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
     }
 }
 void ui_event_Button_exit_room(lv_event_t * e)

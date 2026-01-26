@@ -1,9 +1,9 @@
 CMakeFiles/chess_app.dir/lv_drivers/sdl/sdl_gpu.c.o: \
- /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/lv_drivers/sdl/sdl_gpu.c \
+ /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/lv_drivers/sdl/sdl_gpu.c \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/lv_drivers/sdl/sdl_gpu.h \
- /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/lv_drivers/lv_drv_conf.h \
- /mnt/c/Users/18450/OneDrive/Desktop/lvgl_arm/project_0120/network/lvgl-fb/lvgl/lv_conf.h \
+ /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/lv_drivers/sdl/sdl_gpu.h \
+ /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/lv_drivers/lv_drv_conf.h \
+ /mnt/c/Users/Matthew/Desktop/09-network/lvgl-fb/lvgl/lv_conf.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \

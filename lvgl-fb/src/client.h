@@ -18,7 +18,7 @@ typedef struct {
     char msg_text[128];     // 提示文字
     char username[32];
     int room_id;
-    int side;               // 阵营：1红 2黑
+    int side;          // 阵营：1红 2黑
     char role[16];          
     int is_my_turn;         
 } PlayerGlobalData;

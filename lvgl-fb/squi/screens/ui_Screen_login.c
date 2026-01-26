@@ -139,6 +139,29 @@ void ui_Screen_login_screen_init(void)
     lv_label_set_text(ui_Label_login_fail, "登录失败，请重新输入！");
     lv_obj_set_style_text_font(ui_Label_login_fail, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+    ui_Container_login_repeat = lv_obj_create(ui_Screen_login);
+    lv_obj_remove_style_all(ui_Container_login_repeat);
+    lv_obj_set_width(ui_Container_login_repeat, 800);
+    lv_obj_set_height(ui_Container_login_repeat, 480);
+    lv_obj_set_align(ui_Container_login_repeat, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Container_login_repeat, LV_OBJ_FLAG_HIDDEN);     /// Flags
+    lv_obj_clear_flag(ui_Container_login_repeat, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_Container_login_repeat, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_Container_login_repeat, 128, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Panel_login_repeat = lv_obj_create(ui_Container_login_repeat);
+    lv_obj_set_width(ui_Panel_login_repeat, 240);
+    lv_obj_set_height(ui_Panel_login_repeat, 50);
+    lv_obj_set_align(ui_Panel_login_repeat, LV_ALIGN_CENTER);
+    lv_obj_clear_flag(ui_Panel_login_repeat, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
+    ui_Label_login_repeat = lv_label_create(ui_Panel_login_repeat);
+    lv_obj_set_width(ui_Label_login_repeat, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label_login_repeat, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_Label_login_repeat, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label_login_repeat, "登录失败，不能重复登录！");
+    lv_obj_set_style_text_font(ui_Label_login_repeat, &ui_font_Black, LV_PART_MAIN | LV_STATE_DEFAULT);
+
     lv_obj_add_event_cb(ui_Username_login, ui_event_Username_login, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Password_login, ui_event_Password_login, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button_login, ui_event_Button_login, LV_EVENT_ALL, NULL);

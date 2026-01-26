@@ -14,3 +14,19 @@ def Text_clean(event_struct):
 def Create_Room_Handler(event_struct):
     return
 
+
+def event_button_exit(event_struct):
+    return
+
+
+def func_log_out(event_struct):
+    return
+
+
+def event_button_logout(event_struct):
+    return
+
+
+def Join_Room_Handler(event_struct):
+    return
+

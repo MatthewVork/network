@@ -13,7 +13,9 @@ extern "C" {
 void Text_clean(lv_event_t * e);
 void User_login(lv_event_t * e);
 void User_register(lv_event_t * e);
+void event_button_logout(lv_event_t * e);
 void Create_Room_Handler(lv_event_t * e);
+void Join_Room_Handler(lv_event_t * e);
 void event_button_exit(lv_event_t * e);
 
 #ifdef __cplusplus

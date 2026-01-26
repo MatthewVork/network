@@ -107,22 +107,25 @@ int main(int argc, char **argv) {
             else if (g_player.msg_type == 2) {
                 if (strcmp((char*)g_player.status, "success") == 0) 
                 {
-                    // 1. 立即显示提示
+                    // 登录成功：显示成功容器
                     lv_obj_clear_flag(ui_Container_login_success, LV_OBJ_FLAG_HIDDEN);
-                    
-                    // 2. 优化：定时器设为 1.2 秒后隐藏（略早于跳转完成时间）
-                    // 这样可以确保在该屏幕“彻底卸载”前，容器状态已经重置为 HIDDEN
+                    // 使用你定义的定时器，1.2秒后自动隐藏
                     lv_timer_create(hide_ui_timer_cb, 1200, ui_Container_login_success);
-
-                    // 3. 执行屏幕切换，延迟 1.5 秒
-                    // 这个 1.5s 延迟能保证用户看清“登录成功”四个字
+                    // 执行屏幕切换，延迟 1 秒加载主菜单
                     _ui_screen_change(&ui_Screen_main_menu, LV_SCR_LOAD_ANIM_FADE_ON, 500, 1000, &ui_Screen_main_menu_screen_init);
                 } 
+                else if (strcmp((char*)g_player.status, "repeat") == 0) // <--- 注意：这里要匹配你服务器返回的具体字符串
+                {
+                    // 重复登录：显示你新创建的 ui_Container_login_repeat
+                    lv_obj_clear_flag(ui_Container_login_repeat, LV_OBJ_FLAG_HIDDEN);
+                    
+                    // 3秒后自动调用 hide_ui_timer_cb 隐藏该容器
+                    lv_timer_create(hide_ui_timer_cb, 3000, ui_Container_login_repeat);
+                }
                 else 
                 {
-                    // 登录失败：显示红色提示
+                    // 普通登录失败：显示 ui_Container_login_fail
                     lv_obj_clear_flag(ui_Container_login_fail, LV_OBJ_FLAG_HIDDEN);
-                    // 失败不需要跳走，所以时间给足 3 秒
                     lv_timer_create(hide_ui_timer_cb, 3000, ui_Container_login_fail);
                 }
             }
@@ -143,7 +146,37 @@ int main(int argc, char **argv) {
                 }
             }
 
-            g_player.has_update = 0; 
+            else if (g_player.msg_type == 7) { 
+                if (strcmp((char*)g_player.status, "success") == 0) {
+                    g_player.side = 2; // 这里还是会报错，直到你改了 client.h
+                    printf("[CLIENT] 加入成功，进入房间\n");
+                    _ui_screen_change(&ui_Screen_room, LV_SCR_LOAD_ANIM_FADE_ON, 500, 0, &ui_Screen_room_screen_init);
+                }
+                else {
+                    // 这个 else 紧跟在 status 判断后面
+                    printf("加入失败，请检查房间号是否正确且房间未满员\n");
+                }
+            } // 这里结束 type == 7 的判断
+            
+            else if(g_player.msg_type == 9) {
+                // 客户端只负责看状态：如果是 success，说明服务器已经帮你退出了
+                if (strcmp((char*)g_player.status, "success") == 0) {
+                    printf("[CLIENT] 成功离开房间，返回主菜单\n");
+                    
+                    // 重置本地房间状态
+                    g_player.room_id = 0;
+                    g_player.side = 0;
+
+                    // 跳转屏幕
+                    _ui_screen_change(&ui_Screen_main_menu, LV_SCR_LOAD_ANIM_FADE_ON, 500, 0, &ui_Screen_main_menu_screen_init);
+                } 
+                else if (strcmp((char*)g_player.status, "update") == 0) {
+                    // 这是对手退出的通知
+                    printf("[CLIENT] 提示：对手已离开房间\n");
+                }
+            }
+
+         g_player.has_update = 0; 
         }
         lv_timer_handler(); 
         usleep(5000);
